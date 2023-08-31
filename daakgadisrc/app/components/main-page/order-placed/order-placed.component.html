@@ -1,0 +1,152 @@
+<div *ngIf="loaderService.isLoading | async" class="row">
+  <div class="loading col-12">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+  </div>
+</div>
+<div [class.login]="loaderService.isLoading | async" class="wrapper" style="background-color: #f7f7f7">
+  <div class="gambo-Breadcrumb">
+    <div class="container">
+      <div class="row" style="padding-top: 10px">
+        <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a>Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Order Placed
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="all-product-grid" style="padding: 0px 175px">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-8">
+          <div class="order-placed-dt">
+            <span
+              class="iconify cus-icon icon-circle"
+              data-icon="uil:check-circle"
+              style="vertical-align: text-bottom"
+            ></span>
+            <h2>Order Successfully Placed</h2>
+            <p style="font-weight: 300">
+              Thank you for your order! will receive order -
+              <span>(Between 9:00AM To 10:00PM)</span>
+            </p>
+            <div class="delivery-address-bg">
+              <div class="title585 d-flex align-items-center">
+                <div class="pln-icon">
+                  <span
+                    class="iconify cus-icon"
+                    data-icon="uil:telegram-alt"
+                    style="vertical-align: text-bottom; color: #f55d2c"
+                  ></span>
+                </div>
+                <h4 style="font-weight: 400">
+                  Your order will be sent to this address
+                </h4>
+              </div>
+              <ul class="address-placed-dt1">
+                <li>
+                  <p style="display: flex; align-items: center">
+                    <span
+                      class="iconify cus-icon"
+                      data-icon="uil:map-marker-alt"
+                      style="vertical-align: text-bottom; margin-right: 5px"
+                    ></span
+                    >Address :<span
+                      >{{ orderDetails?.oaddress.addressline }}, {{ orderDetails?.oaddress.city }} - {{ orderDetails?.oaddress.pincode }}
+                      {{ orderDetails?.oaddress.state }}, {{ orderDetails?.oaddress.country }}
+                      </span
+                    >
+                  </p>
+                </li>
+                <li>
+                  <p style="display: flex; align-items: center">
+                    <span
+                      class="iconify cus-icon"
+                      data-icon="uil:phone-alt"
+                      style="vertical-align: text-bottom; margin-right: 5px"
+                    ></span
+                    >Phone Number :<span>+91-{{ currUser?.phone }}</span>
+                  </p>
+                </li>
+                <li>
+                  <p style="display: flex; align-items: center">
+                    <span
+                      class="iconify cus-icon"
+                      data-icon="uil:envelope"
+                      style="vertical-align: text-bottom; margin-right: 5px"
+                    ></span
+                    >Order Date :<span
+                      ><div
+                        class="__cf_email__"
+                        data-cfemail="771d181f1913181237120f161a071b125914181a"
+                        >{{ orderDetails?.odate | date:'medium' }}</div
+                      ></span
+                    >
+                  </p>
+                </li>
+                <li>
+                  <p style="display: flex; align-items: center">
+                    <span
+                      class="iconify cus-icon"
+                      data-icon="uil:envelope"
+                      style="vertical-align: text-bottom; margin-right: 5px"
+                    ></span
+                    >Expected Delivery Date :<span
+                      ><div
+                        class="__cf_email__"
+                        data-cfemail="771d181f1913181237120f161a071b125914181a"
+                        >{{ orderDetails?.edate | date }}</div
+                      ></span
+                    >
+                  </p>
+                </li>
+                <li>
+                  <p style="display: flex; align-items: center">
+                    <span
+                      class="iconify cus-icon"
+                      data-icon="uil:card-atm"
+                      style="vertical-align: text-bottom; margin-right: 5px"
+                    ></span
+                    >Payment Method :
+                    <span *ngIf="orderDetails?.rpayid === 'cod'">
+                      Payed
+                    </span>
+                    <span *ngIf="orderDetails?.rpayid !== 'cod'">
+                      Razorpay
+                    </span>
+                  </p>
+                </li>
+              </ul>
+              <div class="stay-invoice">
+                <div class="st-hm d-flex align-items-center">
+                  Stay Home
+                  <span
+                    class="iconify cus-icon"
+                    data-icon="uil:smile"
+                    style="vertical-align: text-bottom; margin-right: 5px"
+                  ></span>
+                </div>
+                <a routerLink="/main-page/home-page" class="invc-link hover-btn">Continue</a>
+              </div>
+              <div *ngIf="orderDetails?.rpayid === ''" class="placed-bottom-dt">
+                The payment of <span>{{ orderDetails?.oprice | currency:'INR' }}</span> you'll make when the deliver
+                arrives with your order.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

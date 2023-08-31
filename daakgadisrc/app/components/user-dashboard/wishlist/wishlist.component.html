@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-title-tab">
+      <h4>
+        <span
+          class="iconify"
+          data-icon="uil:heart"
+          style="margin-right: 10px; margin-bottom: 4px"
+        ></span
+        >Shopping Wishlist
+      </h4>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12">
+    <div class="pdpt-bg">
+      <div class="wishlist-body-dtt">
+        <div *ngFor="let product of wishlist" class="cart-item">
+          <div [routerLink]="['/main-page/single-product', product._id]" style="cursor: pointer;" class="cart-product-img">
+            <img [src]="product.pphoto" alt="" />
+            <div class="offer-badge">{{ (product.aprice - product.dprice)/product.aprice * 100 | number:'2.0-0' }}% Off</div>
+          </div>
+          <div class="cart-text">
+            <h4 [routerLink]="['/main-page/single-product', product._id]" style="cursor: pointer;">{{ product.pname }}</h4>
+            <div class="cart-item-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span></div>
+            <button (click)="removeFromWishlist(product._id)" matTooltip="Remove From Wishlist" type="button" class="cart-close-btn">
+              <span class="iconify" data-icon="uil:trash-alt"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

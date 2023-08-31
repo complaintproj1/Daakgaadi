@@ -1,0 +1,176 @@
+
+  
+
+ <div class="flex flex-wrap items-center" id="bookingSection" >
+    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto" style="margin-top: 10px;margin-bottom: 100px ; width: 700px;">
+      <h3 style="font-size: 40px; text-align: left;">Get an estimate    </h3> 
+      <div class="row">
+        <div style="width: 200px;">
+          <div class="product-item"  *ngIf="type=='t1'"   >
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t1.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">750kg</p>
+              <p>Tata Ace            </p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+               </div>
+            
+          </div>
+          <div class="product-item"   *ngIf="type=='t2'"  >
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t2.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">750kg</p>
+              <p>Ace (Helper)            </p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+                
+               </div>
+          </div>
+          <div class="product-item"    *ngIf="type=='t3'"  >
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t3.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">500kg</p>
+              <p>3 Wheeler            </p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+                
+               </div>
+          </div>
+          <div class="product-item"   *ngIf="type=='t4'">
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t3.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">500kg</p>
+              <p>3 Wheeler (Helper)</p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+                
+               </div>
+          </div>
+          <div class="product-item"  *ngIf="type=='t5'" >
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t5.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">2500kg</p>
+              <p>Tata 407
+              </p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+               </div>
+            
+          </div>
+          <div class="product-item" *ngIf="type=='t6'" >
+            <a class="product-img">
+              <img class="photo" src="./assets/img/t6.svg" alt="" />
+              
+            </a>
+            <div >
+              <p style="font-size: 8px; color:grey;">1250kg</p>
+              <p>Pickup 8ft            </p>
+              <p style="font-size: 12px; color:blue;">Book Now</p>
+                 
+                
+                
+               </div>
+          </div>
+
+          <select name="cars" id="cars">
+            <option value="open">Open</option>
+            <option value="close">Close</option>
+          </select>
+          
+        </div>
+        
+          <div class="cont" style="width: 400px;">
+
+            <div class="curvy-box">
+              
+              <label class="lbl" for="email">Name:</label>
+              <input class="inp" type="email" id="name" [(ngModel)]="name" />
+      
+              <label class="lbl" for="email">Email:</label>
+              <input class="inp" type="email" id="email" [(ngModel)]="email" />
+              <label class="lbl" for="contact">Contact:</label>
+              <input class="inp" type="text" id="contact" [(ngModel)]="contact" />
+              <label class="lbl" for="contact"> From:</label>
+              <input class="inp" type="text" id="area" [(ngModel)]="area" />
+      
+              <label class="lbl" for="contact"> To:</label>
+              <input class="inp" type="text" id="area" [(ngModel)]="area" />
+
+              <div class="row">
+                <div class="width:80px">
+                  <label class="lbl" for="contact"> Type:</label>
+                  <input class="inp" type="text" id="area" [(ngModel)]="area" />
+    
+                </div>
+
+              
+                
+
+              </div>
+      
+
+             
+              <!-- <label class="lbl" for="actual">Actual Weight (kg):</label>
+              <input class="inp" type="number" id="actual" [value]="actual" (input)="actual" />
+      
+              <label class="lbl" for="boxes">no. of Boxes</label>
+              <input class="inp" type="number" id="boxes" [value]="boxes" (input)="boxes"  /> -->
+      
+              <button (click)="calculateEstimated()" >Book Now</button>
+              <!-- <p style="padding: 12px;" id="estimateResult">kg.{{ estimateResult }}</p>
+              
+              <p style="padding: 12px;" id="priceResult">Estimated Price: Rs{{ price }}</p>
+      
+               -->
+              <!-- <button (click)="sendConfirmationEmail()">Confirm Booking</button> -->
+            </div>
+          </div>
+      </div>
+     
+    </div>
+  </div>
+  
+  <div class="table-container" *ngIf="showTable">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Breadth</th>
+          <th>Height</th>
+          <th>Actual Weight</th>
+          <th>Estimate Result</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ length}}</td>
+          <td>{{ breadth }}</td>
+          <td>{{ height }}</td>
+          <td>{{ actual }}</td>
+          <td>{{estimateResult}}</td>
+          <td>Rs{{ price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

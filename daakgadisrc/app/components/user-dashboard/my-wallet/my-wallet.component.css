@@ -1,0 +1,293 @@
+.main-title-tab h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2b2f4c;
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.pdpt-title h4 {
+  border-bottom: 1px solid #efefef;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2f4c;
+}
+
+.reward-body-dtt {
+  padding: 30px;
+  text-align: center;
+}
+
+.reward-img-icon {
+  width: 80px;
+  height: 80px;
+  display: inline-block;
+  background: #f9f9f9;
+  border-radius: 100%;
+  border: 2px solid #efefef;
+  padding: 18px 0;
+}
+
+.reward-img-icon img {
+  width: 40px;
+  text-align: center;
+}
+
+.rewrd-title {
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #3e3f5e;
+  font-size: 14px;
+  text-align: center;
+}
+
+.cashbk-price {
+  color: #2b2f4c;
+  margin-top: 12px;
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.date-reward {
+  display: inline-block;
+  margin-top: 20px;
+  font-weight: 500;
+  background: #f9f9f9;
+  border: 1px dashed #efefef;
+  padding: 2px 15px;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #2b2f4c;
+}
+
+.gambo-body-cash {
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.gambo-body-cash p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e3f5e;
+  margin-top: 20px;
+  line-height: 24px;
+}
+
+.rotate-img {
+  transform: rotate(260deg);
+}
+
+.table-responsive {
+  border: 0;
+  border-radius: 0 0 5px 5px;
+  margin-bottom: 0;
+  overflow-x: inherit;
+}
+
+table.table.ucp-table {
+  margin-bottom: 0px;
+}
+
+.ucp-table {
+  height: auto;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.ucp-table thead {
+  font-weight: 500;
+  padding: 14px !important;
+  border-radius: 0;
+  color: #2b2f4c !important;
+}
+
+.ucp-table thead tr th:first-child {
+  border-bottom-left-radius: 0;
+}
+
+.ucp-table thead tr th {
+  color: #2b2f4c;
+  font-size: 14px;
+  background-color: #ffecec;
+  font-weight: 500;
+}
+
+.ucp-table tfoot {
+  font-weight: 400;
+  padding: 14px !important;
+  border-radius: 4px;
+  font-family: "Roboto", sans-serif;
+  color: #2b2f4c !important;
+}
+
+.ucp-table tfoot td {
+  color: #fff;
+  font-size: 14px;
+  background-color: #2b2f4c;
+  padding: 0.75rem !important;
+}
+
+.ucp-table.earning__table td {
+  padding: 1rem !important;
+}
+
+table {
+  margin: 0px auto 0px;
+  font-size: 14px;
+  width: 100%;
+}
+
+.ucp-table tbody {
+  background: #fff;
+}
+
+.ucp-table td,
+.ucp-table th {
+  border-top: 1px solid #efefef !important;
+}
+
+.ucp-table td {
+  padding: 1.5rem 0.75rem !important;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6;
+}
+
+.ucp-table th:first-child {
+  border-top: 0 !important;
+}
+
+.ucp-table thead th {
+  vertical-align: bottom;
+  border-bottom: 0 !important;
+}
+
+.course_active {
+  color: #ed2a26;
+}
+
+.ucp-table tbody tr td {
+  font-size: 14px;
+  vertical-align: middle;
+  font-weight: 400;
+  color: #3e3f5e;
+}
+
+.offer_active {
+  color: #00b207;
+  font-weight: 700;
+}
+
+.add-cash-body {
+  padding: 20px;
+}
+
+label.control-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #2b2f4c;
+}
+
+.ui.search .prompt {
+  border-radius: 0.3rem !important;
+  width: 100%;
+}
+
+.next-btn16 {
+  height: 40px;
+  padding: 9px 20px;
+  border: 1px solid #00b207;
+  background: #00b207;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.history-body {
+  height: 360px;
+  overflow-y: auto;
+}
+
+.history-list li {
+  display: block;
+  padding: 20px;
+  border-bottom: 1px solid #efefef;
+}
+
+.history-list li:last-child {
+  border-bottom: 0;
+}
+
+.purchase-history {
+  display: flex;
+  align-items: center;
+}
+
+.purchase-history-right {
+  margin-left: auto;
+}
+
+.purchase-history-left h4 {
+  font-size: 16px;
+  color: #2b2f4c;
+  margin-bottom: 8px;
+  text-align: left;
+  font-weight: 500;
+}
+
+.purchase-history-left p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e3f5e;
+  text-align: left;
+  margin-bottom: 8px;
+  line-height: 24px;
+}
+
+.purchase-history-left p ins {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #00b207;
+}
+
+.purchase-history-left span {
+  font-weight: 400;
+  font-size: 13px;
+  color: #3e3f5e;
+  text-align: left;
+  display: block;
+}
+
+.purchase-history-right span {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  color: #00b207;
+  text-align: center;
+}
+
+.purchase-history-right {
+  text-align: center;
+}
+
+.purchase-history-right a {
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 9px;
+  display: block;
+  color: #2b2f4c;
+}
+
+.purchase-history-right a:hover {
+  color: #00b207 !important;
+}
+
+.ui.input > input {
+  font-family: "Roboto", sans-serif !important;
+}

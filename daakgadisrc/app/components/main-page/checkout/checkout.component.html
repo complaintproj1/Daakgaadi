@@ -1,0 +1,504 @@
+<div class="wrapper" style="background-color: #f7f7f7">
+  <div class="gambo-Breadcrumb">
+    <div class="container">
+      <div class="row" style="padding-top: 10px">
+        <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                Checkout
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="all-product-grid">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-7" style="background-color: white">
+          <div id="checkout_wizard" class="checkout accordion left-chck145">
+            <div class="checkout-step">
+              <div class="checkout-card" id="headingOne">
+                <span class="checkout-step-number">1</span>
+                <h4 class="checkout-step-title">
+                  <button
+                    class="wizard-btn"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    Phone Number
+                  </button>
+                </h4>
+              </div>
+              <div
+                id="collapseOne"
+                class="collapse in show"
+                data-parent="#checkout_wizard"
+              >
+                <div class="checkout-step-body">
+                  <p>
+                    We need your phone number so we can inform you about any
+                    delay or problem.
+                  </p>
+                  <p class="phn145">
+                    Your Phone No. <span>+91-{{ currUser.phone }}</span
+                    ><a
+                      class="edit-no-btn hover-btn"
+                      data-bs-target="collapse"
+                      (click)="edit = !edit"
+                      style="cursor: pointer;"
+                      >
+                      {{ edit ? 'Cancel' : 'Edit' }}</a
+                    >
+                  </p>
+                </div>
+                <div *ngIf="edit" class="phone">
+                  <form #f="ngForm" [formGroup]="updatePhoneForm" (ngSubmit)="updatePhone(f.value)">
+                    <mat-form-field color="warn" appearance="outline">
+                      <input matInput type="text" formControlName="phone">
+                    </mat-form-field>
+                    <button class="ms-2" style="color: white; background-color: #f55d2c;" mat-raised-button >Submit</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="checkout-step">
+              <div class="checkout-card" id="headingTwo">
+                <span class="checkout-step-number">2</span>
+                <h4 class="checkout-step-title">
+                  <button
+                    class="wizard-btn collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    Delivery Address
+                  </button>
+                </h4>
+              </div>
+              <div
+                id="collapseTwo"
+                class="collapse"
+                aria-labelledby="headingTwo"
+                data-parent="#checkout_wizard"
+              >
+              <div class="row">
+                <div class="col-lg-12 col-md-12">
+                  <!-- <a
+                  (click)="openDialog()"
+                  style="cursor: pointer;"
+                  class="add-address hover-btn"
+                  data-toggle="modal"
+                  data-target="#address_model"
+                  >Add New Address</a
+        > -->
+                  <div class="pdpt-bg">
+                    <div class="pdpt-title">
+                      <h4>My Address</h4>
+                      <button (click)="openDialog()" class="add-address hover-btn">Add New Address</button>
+                    </div>
+                    <div class="address-body">
+                      <form [formGroup]="selectaddressform" #add="ngForm">
+                        <div class="row">
+                          <div class="col-12">
+                            <mat-radio-group (change)="saveAddress(add.value)" formControlName="address" required>
+                              <mat-radio-button checked="true" color="warn" style="width: 100%; display: flex; margin-left: 15px;" [value]="address" *ngFor="let address of allAddress; index as i">
+                                <div class="address-item" style="width: 100%;">
+                                  <div class="address-icon1" style="margin-top: 20px;">
+                                    <span *ngIf="address.nickname === 'Home'" class="iconify" data-icon="uil:home-alt"></span>
+                                    <span *ngIf="address.nickname === 'Office'" class="iconify" data-icon="uil:bag-alt"></span>
+                                    <span *ngIf="address.nickname === 'Other'" class="iconify" data-icon="uil:location-arrow"></span>
+                                  </div>
+                                  <div class="address-dt-all">
+                                    <h4>{{ address.nickname }}</h4>
+                                    <p>
+                                      <b>{{ address.name }}</b>
+                                      <br>
+                                      {{ address.addressline }}, {{ address.city }} - {{ address.pincode }}, {{ address.state }}, {{ address.country }}
+                                    </p>
+                                  </div>
+                                </div>
+                              </mat-radio-button>
+                            </mat-radio-group>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              </div>
+            </div>
+            <div class="checkout-step">
+              <div class="checkout-card" id="headingThree">
+                <span class="checkout-step-number">3</span>
+                <h4 class="checkout-step-title">
+                  <button
+                    class="wizard-btn collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    Delivery Date
+                  </button>
+                </h4>
+              </div>
+              <div
+                id="collapseThree"
+                class="collapse"
+                aria-labelledby="headingThree"
+                data-parent="#checkout_wizard"
+              >
+                <div class="checkout-step-body">
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="control-label"
+                          >Select Date*</label
+                        >
+                        <div class="date-slider-group">
+                          <div class="owl-carousel date-slider owl-theme">
+                            <div *ngIf="todayDate.getHours() < 17; else showTime" class="item">
+                              <div class="date-now">
+                                <input
+                                  (change)="getDeliveryDate('today')"
+                                  type="radio"
+                                  id="dd1"
+                                  name="address1"
+                                />
+                                <label for="dd1">Today</label>
+                              </div>
+                            </div>
+                            <ng-template #showTime >
+                              <div class="mb-3" style="color: #f55d2c">
+                                (Same day Delivery is not Applicable if the time exceeds 5:00 PM.)
+                              </div>
+                            </ng-template>
+                            <div class="item">
+                              <div class="date-now">
+                                <input (change)="getDeliveryDate('tomorrow')" type="radio" id="dd2" name="address1" />
+                                <label for="dd2">Tomorrow</label>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="date-now">
+                                <input (change)="getDeliveryDate('secondDay')" type="radio" id="dd3" name="address1" />
+                                <label for="dd3">{{ secondDayDate | date }}</label>
+                              </div>
+                            </div>
+                            <div class="item">
+                              <div class="date-now">
+                                <input (change)="getDeliveryDate('thirdDay')" type="radio" id="dd4" name="address1" />
+                                <label for="dd4">{{ thirdDayDate | date }}</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <div class="time-radio">
+                          <div class="ui form">
+                            <div class="grouped fields">
+                              <div class="field">
+                                <div class="ui radio checkbox chck-rdio">
+                                  <input
+                                    type="radio"
+                                    name="fruit"
+                                    checked=""
+                                    tabindex="0"
+                                    class="hidden"
+                                  />
+                                  <label>8.00AM - 10.00AM</label>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <div class="ui radio checkbox chck-rdio">
+                                  <input
+                                    type="radio"
+                                    name="fruit"
+                                    tabindex="0"
+                                    class="hidden"
+                                  />
+                                  <label>10.00AM - 12.00PM</label>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <div class="ui radio checkbox chck-rdio">
+                                  <input
+                                    type="radio"
+                                    name="fruit"
+                                    tabindex="0"
+                                    class="hidden"
+                                  />
+                                  <label>12.00PM - 2.00PM</label>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <div class="ui radio checkbox chck-rdio">
+                                  <input
+                                    type="radio"
+                                    name="fruit"
+                                    tabindex="0"
+                                    class="hidden"
+                                  />
+                                  <label>2.00PM - 4.00PM</label>
+                                </div>
+                              </div>
+                              <div class="field">
+                                <div class="ui radio checkbox chck-rdio">
+                                  <input
+                                    type="radio"
+                                    name="fruit"
+                                    tabindex="0"
+                                    class="hidden"
+                                  />
+                                  <label>4.00PM - 6.00PM</label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="checkout-step">
+              <div class="checkout-card" id="headingFour">
+                <span class="checkout-step-number">3</span>
+                <h4 class="checkout-step-title">
+                  <button
+                    class="wizard-btn collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    Payment
+                  </button>
+                </h4>
+              </div>
+              <div
+                id="collapseFour"
+                class="collapse"
+                aria-labelledby="headingFour"
+                data-parent="#checkout_wizard"
+              >
+                <div class="checkout-step-body">
+                  <div class="payment_method-checkout">
+                    <div class="row d-flex align-items-center mb-3">
+                      <div class="col-4 ms-1">
+                        Use Points: <mat-slide-toggle [(ngModel)]="sliderVal" #val color="warn" (ngModelChange)="applyPoints(val)" class="ms-2"> <span style="font-weight: bold;"> {{ currUser?.balance | number:'1.0-0' }}</span> </mat-slide-toggle> <img height="16px" width="16px" src="assets/images/Dollar.svg" alt="" /> 
+                      </div>
+                      <div class="col-7">
+                        <h5>( {{ pointsValue }} Points = ₹1)</h5>
+                      </div>
+                    </div>
+
+                    <div>
+                      <label>Instructions:</label>
+                      <label>1: Send money through UPI/Bank/Wallet at UPI ID:  9466560786@hdfcbank  and Bank Details : Account Holder: VAKEEM AGRO LLP ,Account Number: 50200074827202 , IFSC: HDFC0000459 ,Branch: PALWAL - HARYANA ,Account Type: CURRENT </label>
+                      <label>2: Take Screenshot and send screenshot and transcation id.</label>
+                      <label>3: Send Recharge request to admin with all details.</label>
+                      <label>4: Admin will verify.</label>
+                      <label>5: Will Deliver your product to you.</label>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        
+                        <div class="form-group">
+                          <label class="form-label">Name*</label>
+                          <input
+                           [(ngModel)]="name"
+                            class="form-control"
+                            placeholder="Enter "
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Payment ID*</label>
+                          <input
+                           [(ngModel)]="pid"
+                            
+                            class="form-control"
+                            placeholder="Enter "
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Amount *</label>
+                          <input
+                       
+                            [(ngModel)]= 'amount'
+                            class="form-control"
+                            placeholder="Enter "
+                          />
+                        </div>
+                        <div class="form-group">
+                          <label class="form-label">Screenshot*</label>
+                          <div class="input-group">
+                            <div class="custom-file">
+                              <input
+                                type="file"
+                                class="custom-file-input"
+                                id="inputGroupFile04"
+                                aria-describedby="inputGroupFileAddon04"
+                                accept="image/png"
+                                (change)="onFileSelected($event)"
+                                style="width: 100%"
+                                hidden
+                              />
+                              <label
+                                class="custom-file-label"
+                                for="inputGroupFile04"
+                                style="width: 570px"
+                                >Choose Image</label
+                              >
+                            </div>
+                          </div>
+                          <div class="offer-img mt-3" *ngIf="photo != null">
+                            <img [src]="photo" alt="" />
+                          </div>
+                        </div>
+                        <a style="cursor: pointer; margin-top: 10px;" (click)="placeOrder()" class="next-btn16 hover-btn">Place Order</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-5">
+          <div class="pdpt-bg mt-0">
+            <div class="pdpt-title d-flex justify-content-center">
+              <h4 class="mt-2" style="text-decoration: underline;">Order Summary</h4>
+            </div>
+            <div *ngFor="let item of cart" class="right-cart-dt-body">
+              <div class="cart-item border_radius">
+                <div class="cart-product-img">
+                  <img [src]="item.pphoto" alt="" />
+                  <div class="offer-badge">{{ (item.aprice - item.dprice)/item.aprice * 100 | number:'2.0-0' }}% Off</div>
+                </div>
+                <div class="cart-text">
+                  <h4 style="font-weight: 400;">{{ item.pname }} 
+                    <input
+                    *ngIf="showAddBtn === true"
+                    (click)="decreaseQty()"
+                    type="button"
+                    value="-"
+                    class="minus minus-btn"
+                    style="padding: 2px 10px"
+                  />
+                    <b class="mx-1">(x{{ item.qty }} {{ item.unit }}) </b>
+
+                    <input
+                    [disabled]="item.qty === item.quantity"
+                    *ngIf="showAddBtn === true"
+                    (click)="increaseQty()"
+                    type="button"
+                    value="+"
+                    class="plus plus-btn"
+                    style="padding: 2px 8px"
+                  />
+                  </h4>
+                  
+                  <div class="cart-item-price">{{ item.dprice | currency:'INR' }} <span>{{ item.aprice | currency:'INR' }}</span> </div>
+                  <button type="button" class="cart-close-btn">
+                    <i class="uil uil-multiply"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="total-checkout-group">
+              <div class="cart-total-dil">
+                <h4>Vakeem Agro LLP Price</h4>
+                <span>{{ grandTotal | currency:'INR' }}</span>
+              </div>
+              <div class="cart-total-dil pt-3">
+                <h4>Delivery Charges</h4>
+                <span>{{ deliveryCharges | currency:'INR'}}</span>
+              </div>
+            </div>
+            <div class="cart-total-dil saving-total">
+              <h4>Total Saving</h4>
+              <span>{{ totalSavings | currency:'INR' }}</span>
+            </div>
+            <div *ngIf="showApplyPointsBool === false" class="main-total-cart">
+              <h2 [style.flex]=" newTotalFlag === true ? 1 : '' ">Total</h2>
+              <span *ngIf="newTotalFlag === false">{{ grandTotal + deliveryCharges | currency:'INR' }}</span>
+              <div *ngIf="newTotalFlag === true" class="product-price">{{ newTotal | currency:'INR' }} <span>{{ grandTotal + deliveryCharges | currency:'INR' }}</span></div>
+            </div>
+            <div *ngIf="showApplyPointsBool === true" class="main-total-cart">
+              <h2 [style.flex]=" showApplyPointsBool === true ? 1 : '' ">Total</h2>
+              <div class="product-price">{{ pointsTotal | currency:'INR' }} <span>{{ grandTotal + deliveryCharges | currency:'INR' }}</span></div>
+            </div>
+            <div class="payment-secure">
+              <i class="uil uil-padlock"></i>Secure checkout
+            </div>
+          </div>
+
+
+          <a (click)="referral = true" *ngIf="referral === false" class="promo-link45">Have a Referral Code?</a>
+          <div *ngIf="referral === true" class="promo-link45">
+            <div class="close" (click)="closeReferral()">
+              <span class="iconify close-btn" data-icon="ion:close-circle"></span>
+            </div>
+            
+            <div class="row d-flex align-items-center">
+              <div class="col-md-8 col-lg-8">
+                <mat-form-field color="warn" style="width: 100%;">
+                  <mat-label>Enter Referral-Code</mat-label>
+                  <input type="text" #referral matInput>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <button (click)="applyReferral(referral.value)" style="width: 100%; background-color: #f55d2c; color: white;" mat-raised-button>Apply</button>
+              </div>
+            </div>
+            <p *ngIf="validReferral === 2" style="color: red;">Referral Code "{{ referral.value }}" is Invalid!</p>
+            <p *ngIf="validReferral === 1" style="color: rgb(1, 209, 1);">Congratulations, you will get {{ points }} points upon completion of order using the Referral Code - <span class="badge bg-success"><span class="iconify" data-icon="ion:pricetag"></span> {{ referral.value }} <i (click)="removeCoupon()" matTooltip="Remove Promocode"><span style="cursor: pointer;" class="iconify" data-icon="ion:close-outline"></span></i></span></p>
+          </div>
+
+
+          <a (click)="promo = true" *ngIf="promo === false" class="promo-link45">Have a Promo Code?</a>
+          <div *ngIf="promo === true" class="promo-link45">
+            <div class="close" (click)="close()">
+              <span class="iconify close-btn" data-icon="ion:close-circle"></span>
+            </div>
+            
+            <div class="row d-flex align-items-center">
+              <div class="col-md-8 col-lg-8">
+                <mat-form-field color="warn" style="width: 100%;">
+                  <mat-label>Enter Promo-Code</mat-label>
+                  <input type="text" #promoCode matInput>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4 col-lg-4">
+                <button (click)="applyPromo(promoCode.value)" style="width: 100%; background-color: #f55d2c; color: white;" mat-raised-button>Apply</button>
+              </div>
+            </div>
+            <p *ngIf="validCoupan === 2" style="color: red;">Coupon Code "{{ promoCode.value }}" is Invalid!</p>
+            <p *ngIf="validCoupan === 1" style="color: rgb(1, 209, 1);">Congratulations, you got {{ 15 }}% Off using the Code- <span class="badge bg-success"><span class="iconify" data-icon="ion:pricetag"></span> {{ promoCode.value }}      <i (click)="removeCoupon()" matTooltip="Remove Promocode"><span style="cursor: pointer;" class="iconify" data-icon="ion:close-outline"></span></i></span></p>
+          </div>
+
+
+          <div class="checkout-safety-alerts">
+            <p><i class="uil uil-sync"></i>100% Replacement Guarantee</p>
+            <p><i class="uil uil-check-square"></i>100% Genuine Products</p>
+            <p><i class="uil uil-shield-check"></i>Secure Payments</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

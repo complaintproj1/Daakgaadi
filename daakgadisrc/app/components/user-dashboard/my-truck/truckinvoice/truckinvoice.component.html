@@ -1,0 +1,109 @@
+<section id="section" style="padding: 0;">
+
+    <header>
+        <div class="row" style="height: 120px; background-color: #f55d2c;">
+            <div class="col-4 d-flex align-datas-center " style="margin-left: 20px;">
+                <a
+                class="delete-btn"
+                title="Generate Invoice"
+                style="cursor: pointer; color: white;"
+                ><i style="font-size: 18px;" class="fas fa-file-invoice me-1"></i
+                ></a>
+                <h3 style="color: white;">Invoice</h3>
+            </div>
+            <div class="col-7 d-block align-datas-center mt-2">
+                <h5 style="text-align: end; color: white;">DaakGadi.</h5>
+                <p style="text-align: end; color: white;">Harayana </p>
+                <p style="text-align: end; color: white;">India</p>
+                <p style="text-align: end; color: white;">Mob No.: +91 9999167600</p>
+            </div>
+        </div>
+    </header>
+
+    <body>
+        <div class="upper-section" style="padding: 15px 20px;">
+            <div class="row">
+                <div class="col-6 d-block">
+                    <p class="mb-3">BILL TO:</p>
+                    <h5 style="text-transform: uppercase;">{{ data.name }}</h5>
+                    <p class="mt-1">{{ data.email }}</p>
+                    <p>{{ data.contact }}</p>
+                </div>
+                <div class="col-6 d-block">
+                    <p style="text-align: end;">INVOICE#</p>
+                    <p class="mt-1" style="text-align: end;">DATE</p>
+                    <p style="text-align: end;"> <b>{{ data.date | date }}</b> </p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="main-section" style="padding: 15px 20px;">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <div style="border: 1px solid gray; border-radius: 5px;">
+
+                        <table style="width: 600px;" class="table table-striped">
+                            <thead>
+                              <tr>
+                                <th style="text-align: center;" scope="col">SR. NO.</th>
+                                <th style="text-align: center;" scope="col">DETAILS</th>
+                                <th style="text-align: center;" scope="col">AMOUNT</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr >
+                                <td style="text-align: center;">{{ 1 }}</td>
+                                <td style="text-align: center;"> 
+                                    Truck Type - {{ data.type }} ,
+
+Address - {{ data.addres }}
+
+
+</td>
+                                <td style="text-align: center;">{{ data.amount | currency:'INR':true }}</td>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                
+                              </tr>
+                              <tr>
+                                <!-- <td colspan="3" style="background-color: #ffcfc0;">
+                                    <div class="row">
+                                        <div class="col-6 d-flex justify-content-end" style="padding-right: 0;">
+                                            <p>Current Status: </p> 
+                                        </div>
+                                        <div class="col-6 d-flex justify-content-start" style="padding-left: 5px;">
+                                            <h5>{{ data?.ostatus }}</h5>
+                                        </div>
+                                    </div>
+                                </td> -->
+                                <td style="text-align: center; background-color: #f55d2c;">
+                                    <p style="color: white;">TOTAL:</p>
+                                </td>
+                                <td style="text-align: center; background-color: #f55d2c;">
+                                    <p style="color: white;"></p>
+                                </td>
+                                <td style="text-align: right; background-color: #f55d2c;">
+                                    <h5 style="color: white;">{{  data.amount | currency:'INR':true }}</h5>
+                                </td>
+                              </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</section>
+
+<!-- <div class="row mt-3">
+    <div class="col d-flex justify-content-center">
+        <button printSectionId="section" ngxPrint mat-raised-button color="warn">
+            <mat-icon>print</mat-icon>
+            Print
+        </button>
+    </div>
+</div> -->

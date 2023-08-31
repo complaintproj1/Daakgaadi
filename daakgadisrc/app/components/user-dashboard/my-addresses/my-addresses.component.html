@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-title-tab">
+      <h4>
+        <span
+          class="iconify"
+          data-icon="uil:location-point"
+          style="margin-right: 10px; margin-bottom: 4px"
+        ></span
+        >My Address
+      </h4>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12">
+    <div class="pdpt-bg">
+      <div class="pdpt-title">
+        <h4>My Address</h4>
+      </div>
+      <div class="address-body">
+        <a
+          (click)="openDialog()"
+          style="cursor: pointer;"
+          class="add-address hover-btn"
+          data-toggle="modal"
+          data-target="#address_model"
+          >Add New Address</a
+        >
+        <div class="address-item" *ngFor="let address of allAddress">
+          <div class="address-icon1">
+            <span *ngIf="address.nickname === 'Home'" class="iconify" data-icon="uil:home-alt"></span>
+            <span *ngIf="address.nickname === 'Office'" class="iconify" data-icon="uil:bag-alt"></span>
+            <span *ngIf="address.nickname === 'Other'" class="iconify" data-icon="uil:location-arrow"></span>
+          </div>
+          <div class="address-dt-all">
+            <h4>{{ address.name }}</h4>
+            <p>
+              {{ address.addressline }}, {{ address.city }} - {{ address.pincode }}, {{ address.state }}, {{ address.country }}
+             
+            </p>
+            <ul class="action-btns">
+              <li>
+                <a class="action-btn">
+                  <span class="iconify" data-icon="uil:trash-alt"></span
+                ></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

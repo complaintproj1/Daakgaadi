@@ -1,0 +1,107 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-title-tab">
+      <h4>
+        <span
+          class="iconify"
+          data-icon="uil:box"
+          style="margin-right: 10px; margin-bottom: 4px"
+        ></span
+        >My Parcel
+      </h4>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12">
+    <div *ngFor="let order of allOrders" class="pdpt-bg">
+      <div class="pdpt-title">
+        <div class="row d-flex align-items-center" style="width: 600px">
+          <div class="col-8">
+                    <h6>Order ID : {{ order._id  }} is Placed on {{ order.date | date:'medium' }}</h6>
+
+          </div>
+          <div class="col-4 d-flex justify-content-end">
+            <div class="col-4 d-flex justify-content-end">
+            <div (click)="generateInvoice(order)" matTooltip="Generate Invoice" style="cursor: pointer" class="invoice d-flex align-items-center">
+              <mat-icon>assignment</mat-icon>
+            </div>
+          </div>
+          </div>
+        </div>      </div>
+      <div class="order-body10">
+        <ul class="order-dtsll">
+          <li>
+            
+          </li>
+          <li>
+            <div class="order-dt47">
+              <div class="row d-flex align-items-center" style="width: 600px">
+                <div class="col-8">
+                </div>
+                <div class="col-4 d-flex justify-content-end">
+                </div>
+              </div>
+             
+
+              <p>Length  (in) - {{ order.length }}</p>
+              <p>Breadth (in) - {{ order.breadth }}</p>
+              <p>Height (in) - {{ order.height }}</p>
+              <p>Actual Weight (kg) - {{ order.actualweight }}</p>
+              <p>Boxes - {{ order.boxes }}</p>
+
+            </div>
+          </li>
+        </ul>
+        <hr style="height: 0.1px !important; color: gray">
+       
+
+   
+        
+        <div class="track-order">
+          <h4>Track Order</h4>
+          <div *ngIf="order.status === 'Cancelled'" class="row">
+            <div class="col d-flex justify-content-center align-items-center">
+              <div class="d-flex justify-content-center align-items-center" style="height: 40px; background-color: wheat; border-radius: 10px; width: 200px">
+                <h5>Order Cancelled</h5>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="order.status !== 'Cancelled'" class="bs-wizard" style="border-bottom: 0; align-items: center; display: flex; justify-content: center">
+            <a class="bs-wizard-dot"></a>
+            <a class="bs-wizard-bigger-dot"></a>
+
+            <a *ngIf="order.status === 'Goods in warehouse' || order.status === 'Reached Hub' || order.status === '	Out for delivery'" class="second bs-wizard-dot"></a>
+            <a class="second bs-wizard-bigger-dot"></a>
+
+            <a *ngIf="order.status === 'Reached Hub' || order.status === '	Out for delivery'" class="third bs-wizard-dot"></a>
+            <a class="third bs-wizard-bigger-dot"></a>
+
+            <a *ngIf="order.status === '	Out for delivery'" class="fourth bs-wizard-dot"></a>
+            <a class="fourth bs-wizard-bigger-dot"></a>
+
+            <mat-progress-bar *ngIf="order.status === 'Received goods'" style="width: 80%; background-color: #f55d2c" mode="determinate" value="3"></mat-progress-bar>
+            <mat-progress-bar *ngIf="order.status === 'Goods in warehouse'" style="width: 80%; background-color: #f55d2c" mode="determinate" value="36"></mat-progress-bar>
+            <mat-progress-bar *ngIf="order.status === 'Reached Hub'" style="width: 80%; background-color: #f55d2c" mode="determinate" value="70"></mat-progress-bar>
+            <mat-progress-bar *ngIf="order.status === '	Out for delivery'" style="width: 80%; background-color: #f55d2c" mode="determinate" value="100"></mat-progress-bar>
+          </div>
+          <div *ngIf="order.status !== 'Cancelled'" class="row">
+            <div style="padding-right: 35px !important" class="col-3 d-flex justify-content-center">
+              <p>Received goods</p>
+            </div>
+            <div class="col-3 d-flex justify-content-center">
+              <p>Goods in warehouse</p>
+            </div>
+            <div style="padding-left: 45px !important" class="col-3 d-flex justify-content-center">
+              <p>Reached Hub</p>
+            </div>
+            <div style="padding-left: 55px !important" class="col-3 d-flex justify-content-center">
+              <p>	Out for delivery</p>
+            </div>
+          </div>
+        </div>
+        <div class="call-bill">
+         
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

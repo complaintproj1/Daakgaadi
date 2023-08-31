@@ -1,0 +1,122 @@
+.panel-group {
+  width: 100%;
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+
+.panel-title {
+  vertical-align: middle;
+}
+
+.panel-default {
+  width: 100%;
+  border-top: 0;
+}
+
+.panel-default:first-child {
+  border-top: 0;
+}
+
+.panel-body {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3e3f5e;
+  line-height: 26px;
+  padding-bottom: 20px;
+  text-align: left;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 0 5px 5px;
+  border-top: 1px solid #efefef;
+}
+
+.panel-default {
+  width: 100%;
+  border-top: 0;
+}
+
+.panel-title {
+  vertical-align: middle;
+}
+
+.panel-title a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b2f4c !important;
+  padding: 15px 20px 18px;
+  display: block;
+  line-height: 26px;
+  background: #fff;
+  border-radius: 5px 5px 0 0;
+  margin-top: 10px;
+}
+
+.panel-title a.collapsed {
+  border-radius: 5px;
+}
+
+.chck_icon {
+  color: #00b207;
+  margin-right: 10px;
+}
+
+.panel-title > a:before {
+  float: right !important;
+  font-family: "Roboto", sans-serif;
+  content: "\f058";
+  padding-right: 0px;
+  font-size: 16px;
+  padding-top: 2px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+}
+
+.panel-title > a.collapsed:before {
+  float: right !important;
+  content: "\f058";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+}
+
+.color-pink {
+  color: #00b207;
+}
+
+.contact-title h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 17px !important;
+  text-align: left;
+  margin-bottom: 12px;
+  color: #2b2f4c;
+}
+
+.contact-title p {
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0 !important;
+  text-align: left;
+  margin-bottom: 0;
+  color: #3e3f5e;
+  line-height: 26px;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 5px;
+  padding: 20px 30px 30px;
+  margin-top: 34px;
+  margin-bottom: 14px;
+}
+
+.next-btn16 {
+  height: 40px;
+  padding: 9px 20px;
+  border: 1px solid #00b207;
+  background: #00b207;
+  color: #fff;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  display: inline-block;
+}

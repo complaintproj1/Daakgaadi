@@ -1,0 +1,73 @@
+<div class="container">
+    <form #f="ngForm" (ngSubmit)="addAddress(f.value)" [formGroup]="addAddressForm">
+        <div class="row">
+            <div class="col-12 my-1">
+                <mat-radio-group formControlName="nickname" color="warn">
+                    <mat-radio-button class="mx-2" [value]="type" *ngFor="let type of types">
+                        {{ type }}
+                    </mat-radio-button>
+                </mat-radio-group>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Enter Name</mat-label>
+                    <input formControlName="name" type="text" matInput>
+                    <mat-icon matSuffix>person</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Enter Address Line</mat-label>
+                    <input formControlName="addressline" type="text" matInput>
+                    <mat-icon matSuffix>location_on</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Enter City</mat-label>
+                    <input formControlName="city" type="text" matInput>
+                    <mat-icon matSuffix>location_city</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-6 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Enter Pincode</mat-label>
+                    <input formControlName="pincode" type="text" matInput>
+                    <mat-icon matSuffix>pin_drop</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Select State</mat-label>
+                    <mat-select formControlName="state">
+                        <mat-option *ngFor="let state of states" [value]="state">
+                          {{ state }}
+                        </mat-option>
+                    </mat-select>
+                    <mat-icon matSuffix>location_city</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="col-6 my-1">
+                <mat-form-field style="width: 100%;" appearance="outline">
+                    <mat-label>Enter Phone</mat-label>
+                    <input formControlName="phone" type="text" matInput>
+                    <mat-icon matSuffix>phone</mat-icon>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 my-1">
+                <button mat-raised-button [disabled]="f.invalid" class="mx-2" type="submit" style="color: white; background-color: #f55d2c;">Submit</button>
+                <button mat-raised-button (click)="dialogRef.close(-1)" type="button" color="secondary">Cancel</button>
+            </div>
+        </div>
+    </form>
+</div>

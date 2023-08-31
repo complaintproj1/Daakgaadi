@@ -1,0 +1,158 @@
+.main-title-tab h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2b2f4c;
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.pdpt-title h4 {
+  border-bottom: 1px solid #efefef;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2f4c;
+}
+
+.welcome-text h2 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #2b2f4c;
+  text-align: left;
+  margin-bottom: 3px !important;
+  margin-top: 30px !important;
+}
+
+.ddsh-body {
+  padding: 20px;
+}
+
+.ddsh-body h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #2b2f4c;
+  font-weight: 500;
+}
+
+.ddsh-body ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.ddsh-body ul li:last-child {
+  margin-right: 0;
+}
+
+.smll-history {
+  display: flex;
+  width: 100%;
+  padding: 4px 0;
+}
+
+.smll-history p {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 600;
+  color: #3e3f5e;
+}
+
+.small-reward-dt {
+  color: #fff;
+  background: #00b207;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 12px;
+  display: block;
+}
+
+.rewards-link5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b2f4c;
+}
+
+.rewards-link5:hover {
+  color: #00b207 !important;
+}
+
+.order-list-145 li {
+  display: block !important;
+  margin-right: 0 !important;
+}
+
+.order-status {
+  margin-left: auto;
+  font-size: 14px;
+  font-weight: 500;
+  color: #00b207;
+}
+
+.more-link14 {
+  text-align: left;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #2b2f4c;
+  display: block;
+  border-top: 1px solid #efefef;
+}
+
+.more-link14:hover {
+  color: #00b207 !important;
+}
+
+.wllt-body h2 {
+  font-weight: 500;
+}
+
+[data-inverted][data-position~="top"][data-tooltip]:before {
+  background: #2b2f4c !important;
+}
+
+[data-position="top right"][data-tooltip]:before {
+  right: 0.1em !important;
+}
+
+[data-tooltip][data-inverted]:after {
+  background: #2b2f4c !important;
+  color: #fff;
+}
+
+[data-tooltip]:after {
+  border: 1px solid #d4d4d5;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  font-family: "Roboto", sans-serif;
+}
+
+.wllt-body {
+  padding: 20px 20px 0;
+}
+
+.wallet-list {
+  padding-top: 10px;
+}
+
+.wallet-list li {
+  width: 50% !important;
+  display: inline-block;
+  margin-right: 0 !important;
+  margin-bottom: 20px;
+  margin-left: -2px;
+}
+
+.wallet-links14 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b2f4c;
+  display: flex;
+  align-items: center;
+}
+
+.wallet-links14 .iconify {
+  font-size: 18px;
+  margin-right: 5px;
+}

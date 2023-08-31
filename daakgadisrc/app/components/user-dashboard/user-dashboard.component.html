@@ -1,0 +1,138 @@
+<app-navbar></app-navbar>
+<div class="wrapper" style="background-color: #f7f7f7">
+  <div class="dashboard-group" style="padding: 40px 0px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="user-dt">
+            <div class="user-img">
+              <img src="assets/images/avatar/img-5.jpg" alt="" />
+              <div class="img-add">
+                <input type="file" id="file" />
+                <label for="file">
+                  <span class="iconify" data-icon="uil:camera-plus"></span>
+                </label>
+              </div>
+            </div>
+            <h4>{{ currUser.name }}</h4>
+            <p>
+              +91-{{ currUser.phone }}
+              
+            </p>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="" style="padding: 20px 175px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <div class="left-side-tabs">
+            <div class="dashboard-left-links">
+              <!-- <a
+                class="user-item"
+                [ngClass]="[currRoute === 'overview' ? 'active' : '']"
+                [routerLink]="['/user-dashboard', 'overview']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
+                ><span class="iconify" data-icon="uil:apps"></span>Overview</a
+              > -->
+              <a
+                class="user-item"
+                [ngClass]="[currRoute === 'my-orders' ? 'active' : '']"
+                [routerLink]="['/user-dashboard', 'my-orders']"
+                ><span class="iconify" data-icon="uil:box"></span>My Part Load</a
+              >
+
+              <a
+              class="user-item"
+              [ngClass]="[currRoute === 'my-parcel' ? 'active' : '']"
+              [routerLink]="['/user-dashboard', 'my-parcel']"
+              ><span class="iconify" data-icon="uil:box"></span>My Parcel</a
+            >
+
+
+            <a
+            class="user-item"
+            [ngClass]="[currRoute === 'my-truck' ? 'active' : '']"
+            [routerLink]="['/user-dashboard', 'my-truck']"
+            ><span class="iconify" data-icon="uil:box"></span>My Truck Full load</a
+          >
+
+
+          <a
+          class="user-item"
+          [ngClass]="[currRoute === 'my-packer' ? 'active' : '']"
+          [routerLink]="['/user-dashboard', 'my-packer']"
+          ><span class="iconify" data-icon="uil:box"></span>My Packers</a
+        >
+
+        <a
+        class="user-item"
+        [ngClass]="[currRoute === 'my-bike' ? 'active' : '']"
+        [routerLink]="['/user-dashboard', 'my-bike']"
+        ><span class="iconify" data-icon="uil:box"></span>My Bike</a
+      >
+
+      <a
+      class="user-item"
+      [ngClass]="[currRoute === 'my-car' ? 'active' : '']"
+      [routerLink]="['/user-dashboard', 'my-car']"
+      ><span class="iconify" data-icon="uil:box"></span>My Car</a
+    >
+
+
+    <a
+    class="user-item"
+    [ngClass]="[currRoute === 'my-warehouse' ? 'active' : '']"
+    [routerLink]="['/user-dashboard', 'my-warehouse']"
+    ><span class="iconify" data-icon="uil:box"></span>My Warehouse</a
+  >
+
+
+              <!-- <a
+                class="user-item"
+                [ngClass]="[currRoute === 'my-rewards' ? 'active' : '']"
+                [routerLink]="['/user-dashboard', 'my-rewards']"
+                ><span class="iconify" data-icon="uil:gift"></span>My Rewards</a
+              > -->
+              <!-- <a
+                class="user-item"
+                [ngClass]="[currRoute === 'my-wallet' ? 'active' : '']"
+                [routerLink]="['/user-dashboard', 'my-wallet']"
+                ><span class="iconify" data-icon="uil:wallet"></span>My
+                Wallet</a
+              > -->
+              <!-- <a
+                class="user-item"
+                [ngClass]="[currRoute === 'wishlist' ? 'active' : '']"
+                routerLink="/user-dashboard/wishlist"
+                ><span class="iconify" data-icon="uil:heart"></span>Shopping
+                Wishlist</a
+              > -->
+              <!-- <a
+                class="user-item"
+                [ngClass]="[currRoute === 'my-addresses' ? 'active' : '']"
+                [routerLink]="['/user-dashboard', 'my-addresses']"
+                ><span class="iconify" data-icon="uil:location-point"></span>My
+                Address</a
+              > -->
+              <a class="user-item" (click)="logOut()"
+                ><span class="iconify" data-icon="uil:exit"></span>Logout</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9 col-md-8">
+          <div class="dashboard-right">
+            <router-outlet></router-outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

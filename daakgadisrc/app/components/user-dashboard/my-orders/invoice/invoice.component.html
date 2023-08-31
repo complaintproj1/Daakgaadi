@@ -1,0 +1,456 @@
+<div id="agrrement-section"  style="padding: 0;">
+
+
+    <header>
+        <div class="row" style="height: 80px; background-color: #f55d2c; ">
+          
+            <table style="height: 60px;">
+                   
+                <tbody>
+                    <tr   >
+                        <th style="text-align: center; width: 20%;">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/susalabsweb.appspot.com/o/Daak-Gaddi-logo-03-removebg-preview.png?alt=media&token=1abccf4c-813e-4250-8f3a-c4240f541287" height="60px" width="100px">
+                        
+                        </th>
+                        <th style="text-align: center; width: 40%; margin-top:0px ;" > 
+                            <p style="text-align: start; color: black; font-size: 13px;">DAAK GADI</p>
+                            <p style="text-align: start; color: black;  font-size: 8px;">Gurgaon Office: Plot NO. 141, Lane NO.2, Palam Vihar Extr.
+                                Near Krishna Chowk, Gurugram, Haryana 122017 </p>
+                            <p style="text-align: start; color: black; font-size: 8px;">Helpline No.: +91 9999167600 , +91 9711215215</p>
+
+</th>
+<th style="text-align: center; width: 40%; margin-top:0px ;" >
+<p style="text-align: end; color: black;  font-size: 8px;">Invoice No. {{data.invoiceno}} </p>
+<p class="mt-1" style="text-align: end;  color: black;  font-size: 8px;">Date: {{ data.date | date }}</p>
+<p class="mt-1" style="text-align: end;font-size: 8px; color: black;">From: {{data.from}}</p>
+<p class="mt-1" style="text-align: end;font-size: 8px; color: black;">To: {{data.to}}</p>
+<p class="mt-1" style="text-align: end;font-size: 8px; color: red;">E-way Bill No : {{data.eway}}</p>
+</th>
+
+                    </tr>
+                 
+                      
+               
+
+
+                  
+                </tbody>
+            </table>
+        </div>
+    </header>
+
+    <body>
+        <!-- <div class="upper-section" style="padding: 15px 20px;">
+            <div class="row">
+                <div class="col-6 d-block">
+                    <p style="text-align: start; color: black; font-size: 8px;">Consignor's Name & Address</p>
+                    
+                    <p style="text-align: start; color: black; font-size: 8px;">{{ data.name  }}</p>
+                    <p style="text-align: start; color: black;font-size: 8px;">Contact No. : {{data.contact}}</p>
+
+                    <p style="text-align: start; color: black; font-size: 8px;">GSTIN : {{ data.gst  }}</p>
+                    <p style="text-align: start; color: black; font-size: 8px;">Lorry No: {{ data.vehicle  }}</p>
+                   
+                </div>
+                <div class="col-6 d-block">
+                    <p style="text-align: start; color: black; font-size: 8px;">Consignor's Name & Address</p>
+                    <p style="text-align: start; color: black; font-size: 8px;">{{ data.name  }}</p>
+                    <p style="text-align: start; color: black; font-size: 8px;">GSTIN : {{ data.gst  }}</p>
+                    
+                </div>
+            </div>
+        </div> -->
+        <hr>
+
+        <p class="mt-1" style="text-align: start;font-size: 8px; color: green;">Tracking ID : {{data._id}}</p>
+
+
+        <table style="height: 60px;">
+                   
+            <tbody>
+                <tr   >
+                   
+                    <th > 
+                        <p style="text-align: start; color: black; font-size: 13px;">Consignor's Name & Address</p>
+                        <p style="text-align: start; color: black;  font-size: 8px;">{{data.name}}</p>
+                        <p style="text-align: start; color: black;font-size: 8px;">Contact No. : {{data.contact}}</p>
+
+                        <p style="text-align: start; color: black;font-size: 8px;">GSTIN : {{data.gst}}</p>
+
+</th>
+
+<th
+style="width: 30%;"
+>
+</th>
+<th>
+    <p style="text-align: start; color: black; font-size: 13px;">Consignee's Name & Address</p>
+    <p style="text-align: start; color: black;  font-size: 8px;">{{data.name}}</p>
+    <p style="text-align: start; color: black;font-size: 8px;">Contact No. : {{data.contact}}</p>
+
+    <p style="text-align: start; color: black;font-size: 8px;">GSTIN : {{data.gst}}</p>
+
+</th>
+
+                </tr>
+             
+                  
+           
+
+
+              
+            </tbody>
+        </table>
+        <hr>
+
+        <div class="main-section" style="padding: 15px 20px;">
+            <div class="row">
+                <div class=" width: 70%;">
+                    <div class="row">
+                        <table>
+                            <tbody>
+
+                                <th >
+                                    <table    style="width: 100%; min-height:120px;  border: 1px solid gray; border-radius: 5px; align-content: flex-start;"  >
+                                        <thead>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">SR. NO. </th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Length</th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Breadth</th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Height</th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Actual Weight</th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Boxes</th>
+
+                                            <th style="text-align: start; font-size: 8px;" scope="col">AMOUNT</th>
+                                            <th style="text-align: start; font-size: 8px;" scope="col">CHARGE AMOUNT</th>
+            
+            
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let box of data.multibox;let i = index"  >
+                                                <td style="text-align: start; font-size: 8px;">{{ i+1 }}</td>
+                                                <td style="text-align: start; font-size: 8px;"> 
+                                                     {{ box.length }}
+             
+                
+                
+                </td>
+                <td style="text-align: start; font-size: 8px;"> 
+
+{{ box.breadth }} 
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.height }}
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+   
+
+{{ box.actual }}
+
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.boxes }}
+
+
+</td>
+                <td style="text-align: start;">{{box.price}}</td>
+                <td *ngIf="box.price<500" style="text-align: start;">{{ 500 | currency:'INR':true}}</td>
+                <td  *ngIf="box.price>=500" style="text-align: start;">{{ box.price | currency:'INR':true}}</td>
+            
+                                            </tr>
+                                         
+                                            <tr *ngFor="let box of data.multibox;let i = index"  >
+                                                <td style="text-align: start; font-size: 8px;">{{ i+1 }}</td>
+                                                <td style="text-align: start; font-size: 8px;"> 
+                                                     {{ box.length }}
+             
+                
+                
+                </td>
+                <td style="text-align: start; font-size: 8px;"> 
+
+{{ box.breadth }} 
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.height }}
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+   
+
+{{ box.actual }}
+
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.boxes }}
+
+
+</td>
+                <td style="text-align: start;">{{box.price}}</td>
+                <td *ngIf="box.price<500" style="text-align: start;">{{ 500 | currency:'INR':true}}</td>
+                <td  *ngIf="box.price>=500" style="text-align: start;">{{ box.price | currency:'INR':true}}</td>
+            
+                                            </tr>
+                                         
+
+                                            <tr *ngFor="let box of data.multibox;let i = index"  >
+                                                <td style="text-align: start; font-size: 8px;">{{ i+1 }}</td>
+                                                <td style="text-align: start; font-size: 8px;"> 
+                                                     {{ box.length }}
+             
+                
+                
+                </td>
+                <td style="text-align: start; font-size: 8px;"> 
+
+{{ box.breadth }} 
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.height }}
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+   
+
+{{ box.actual }}
+
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.boxes }}
+
+
+</td>
+                <td style="text-align: start;">{{box.price}}</td>
+                <td *ngIf="box.price<500" style="text-align: start;">{{ 500 | currency:'INR':true}}</td>
+                <td  *ngIf="box.price>=500" style="text-align: start;">{{ box.price | currency:'INR':true}}</td>
+            
+                                            </tr>
+                                         
+                                            <tr *ngFor="let box of data.multibox;let i = index"  >
+                                                <td style="text-align: start; font-size: 8px;">{{ i+1 }}</td>
+                                                <td style="text-align: start; font-size: 8px;"> 
+                                                     {{ box.length }}
+             
+                
+                
+                </td>
+                <td style="text-align: start; font-size: 8px;"> 
+
+{{ box.breadth }} 
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.height }}
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+   
+
+{{ box.actual }}
+
+
+
+
+</td>
+<td style="text-align: start; font-size: 8px;"> 
+  
+
+{{ box.boxes }}
+
+
+</td>
+                <td style="text-align: start;">{{box.price}}</td>
+                <td *ngIf="box.price<500" style="text-align: start;">{{ 500 | currency:'INR':true}}</td>
+                <td  *ngIf="box.price>=500" style="text-align: start;">{{ box.price | currency:'INR':true}}</td>
+            
+                                            </tr>
+                                         
+                                              
+                                       
+            
+            
+                                          
+                                        </tbody>
+                                    </table>
+
+                                    <table class="table table-striped" style="text-align: start; ">
+                                        <tbody>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Note: If the goods are not received for one month, we will not be responsible if the goods are lost or damaged. </th>
+                                            
+            
+            
+                                          </tr>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Note: Goods Booked On Consignees Name Shall Delivered Without Obtaining Consignee Copy </th>
+                                            
+            
+            
+                                          </tr>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">1. Standard conditions of carriage are given on reverse of the consignors copy.</th>
+                                            
+            
+            
+                                          </tr>
+                                        </tbody>
+                                        
+                                    </table>
+
+                                    <table class="table table-striped" style="text-align: start; ">
+                                        <tbody>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Received by. </th>
+                                            
+            
+            
+                                          </tr>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Name: </th>
+                                            
+            
+            
+                                          </tr>
+                                          <tr  style="text-align: start;">
+                                            <th style="text-align: start; font-size: 8px;" scope="col">Authorized Signatory with Seal</th>
+                                            
+            
+            
+                                          </tr>
+                                        </tbody>
+                                        
+                                    </table>
+
+                                  
+            
+                                    
+                                </th>
+
+                                <th  style="width: 30%; border: 1px solid gray; border-radius: 5px;" >
+                                    <table   >
+                        
+                                        <tbody>
+                                              <tr >
+                                                <td style="text-align: center;  ">
+                                                    <h5 style="color: black;font-size: 8px;"> Basic Freight</h5>
+                
+                                                    <h5 style="color: black;font-size: 8px;"> Pickup Charge</h5>
+                
+                                                    <h5 style="color: black;font-size: 8px;"> Delivery Charge</h5>
+                                                    <h5 style="color: black;font-size: 8px;"> To Pay Charge</h5>
+                                                    <h5 style="color: black;font-size: 8px;"> Docket Charge</h5>
+                                                    <h5 style="color: black;font-size: 8px;"> Handing Charge</h5>
+                                                    <h5 style="color: black;font-size: 8px;"> Delivery Charge</h5>
+                                                    <h5 style="color: black;font-size: 8px;"> GST</h5>
+                                                    <h5 style="color: black;font-size: 8px; "> GRAND TOTAL</h5>
+                
+                                                </td>
+                                                <td style="text-align: right; ">
+                                                    <h5 style="color: black;font-size: 8px;"> {{data.basicf | currency:'INR':true }} </h5>
+                                                    <h5 style="color: black;font-size: 8px;"> {{data.pickupcharge | currency:'INR':true }} </h5>
+                
+                                                    <h5 style="color: black;font-size: 8px;">{{data.delivercharge | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px;">{{data.topay | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px;">{{data.docate | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px;">{{data.handling | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px;">{{data.delivercharge | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px;">{{  data.subtotal/100 * data.totalamount | currency:'INR':true }}</h5>
+                                                    <h5 style="color: black;font-size: 8px; ">{{  data.totalamount | currency:'INR':true }}</h5>
+                
+                                                </td>
+                                              </tr>
+                
+                
+                                           
+                
+                
+                                              
+                                       
+                
+                
+                                          
+                                        </tbody>
+                                    </table>
+
+                                </th>
+                            </tbody>
+                        </table>
+
+                      
+                   
+
+                    </div>
+                </div>
+
+                <!-- <div style="border: 1px solid gray; border-radius: 5px; width: 30%;">
+
+                  
+
+                </div> -->
+            </div>
+        </div>
+
+        <div class="main-section" style="padding: 15px 20px;">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                   
+                </div>
+            </div>
+        </div>
+    </body>
+</div>
+
+<div class="row mt-3">
+    <div class="col d-flex justify-content-center">
+        <button 
+        (click)="printPage()"
+         mat-raised-button color="warn">
+            <mat-icon>print</mat-icon>
+            Print
+        </button>
+    </div>
+</div>

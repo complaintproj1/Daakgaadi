@@ -1,0 +1,156 @@
+<div *ngIf="loaderService.isLoading | async" class="row">
+  <div class="loading col-12">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+  </div>
+</div>
+<div [class.login]="loaderService.isLoading | async" class="sign-inup">
+  <div class="row ">
+    <div class="col-12 d-flex justify-content-center">
+      <img height="175px" width="300px" src="assets/images/logo.png" alt="">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5">
+        <div class="sign-form">
+          <div class="sign-inner">
+            <mat-error *ngIf="signUpError" class="error d-flex">
+              <mat-icon style="margin-right: 3px;">cancel</mat-icon> {{ errorText }}!
+            </mat-error>
+            <div class="form-dt" style="margin-top: 0;">
+              <div class="form-inpts checout-address-step">
+                <form #f="ngForm" (ngSubmit)="signUp(f.value)" [formGroup]="authService.signUpForm">
+                  <div class="form-title"><h6>Sign Up</h6></div>
+                  <div class="form-group pos_rel">
+                    
+                    <input
+                      formControlName="name"
+                      id="full[name]"
+                      name="fullname"
+                      type="text"
+                      placeholder="Full name"
+                      class="form-control lgn_input "
+                      required
+                    />
+                    <mat-icon style="position: absolute; left: 8%;"
+                    [ngStyle]="{'top': showOTPBool == true ? '17%' : '21%'}"
+                    >person</mat-icon>
+                    <!-- <span
+                      matPrefix
+                      class="iconify"
+                      
+                      style="position: absolute; left: 8%;"
+                      data-icon="uil:user-circle"
+                    ></span> -->
+                  </div>
+                  <div class="form-group pos_rel">
+                    <input
+                      formControlName="email"
+                      id="email[address]"
+                      name="emailaddress"
+                      type="email"
+                      placeholder="Email Address"
+                      class="form-control lgn_input"
+                      required=""
+                    />
+                    <mat-icon style="position: absolute; left: 8%;"
+                    [ngStyle]="{'top': showOTPBool == true ? '28%' : '35%'}"
+                    >email</mat-icon>
+                    <!-- <span
+                      class="iconify"
+                      [ngStyle]="{'top': showOTPBool === true ? '30%' : '36%'}"
+                      style="position: absolute; left: 8%;"
+                      data-icon="uil:envelope"
+                    ></span> -->
+                  </div>
+                  <div class="form-group pos_rel">
+                    <input
+                      formControlName="password"
+                      id="password1"
+                      name="password1"
+                      type="password"
+                      placeholder="Password"
+                      class="form-control lgn_input"
+                      required=""
+                    />
+                    <mat-icon style="position: absolute; left: 8%;"
+                    [ngStyle]="{'top': showOTPBool == true ? '39%' : '49%'}"
+                    >lock</mat-icon>
+                    <!-- <span
+                      class="iconify"
+                      [ngStyle]="{'top':showOTPBool === true ? '42%' : '50%'}"
+                      style="position: absolute; left: 8%;"
+                      data-icon="uil:padlock"
+                    ></span> -->
+                  </div>
+                  <div class="form-group pos_rel">
+                    <input
+                      (keyup)="checkVerifyBool()"
+                      style="width: 80%;"
+                      formControlName="phone"
+                      id="phone[number]"
+                      name="phone"
+                      type="text"
+                      placeholder="Phone Number"
+                      class="form-control lgn_input"
+                      required=""
+                      [(ngModel)]="phoneNumber"
+                      min="10"
+                      max="10"
+                    />
+                    <mat-icon style="position: absolute; left: 8%;"
+                    [ngStyle]="{'top': showOTPBool == true ? '50%' : '63%'}"
+                    >phonelink_ring</mat-icon>
+                    <!-- <span
+                      class="iconify"
+                      [ngStyle]="{'top':showOTPBool === true ? '54%' : '64%'}"
+                      style="position: absolute; left: 8%;"
+                      data-icon="uil:mobile-android-alt"
+                    ></span> -->
+                    <button *ngIf="verifyBool === true" class="verify" (click)="getOTP()" type="button" style="margin-left: 8px;">Send OTP</button>
+                    <div id="verify-otp"></div>
+                  </div>
+
+                  <div *ngIf="showOTPBool" style="position: absolute; width: 93%; margin-top: -22%;" class="row">
+                    <div class="col d-flex justify-content-center">
+                      <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="config"></ng-otp-input>
+                    </div>
+                  </div>
+                  
+                  <div *ngIf="showOTPBool" style="position: absolute; width: 93%; margin-top: 12%;" class="row">
+                    <div class="col d-flex justify-content-center">
+                      <button type="button" (click)="verifyOTP()" style="width: 20%;" class="verify-otp" mat-raised-button>Verify</button>
+                    </div>
+                  </div>
+                  
+                  <button
+                    [disabled]="verifyPhoneBool === false"
+                    [ngStyle]="{'background': verifyPhoneBool === false ? 'gray' : ''}"
+                    class="login-btn hover-btn"
+                    [ngClass]="[showOTPBool === true ? 'margin-add' : '']"
+                    type="submit"
+                  >
+                    Sign Up Now
+                  </button>
+                </form>
+              </div>
+              <div class="signup-link">
+                <p>
+                  I have an account? -
+                  <a class="cred" [routerLink]="['/sign-in']">Sign In Now</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

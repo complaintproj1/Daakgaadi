@@ -1,0 +1,182 @@
+
+  
+
+ <div class="flex flex-wrap items-center" id="bookingSection" >
+    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto" style="margin-top: 100px;margin-bottom: 100px;">
+      <h3 style="font-size: 40px; text-align: left;">Calculate Rate</h3> 
+      <div class="cont">
+        <div class="curvy-box">
+
+          <div>
+
+          </div>
+            <label for="pickup">Pickup Location:</label>
+            <select
+            id="ddlViewBy"  
+            class="form-control"
+            [(ngModel)]="selectedfrom"
+              #tag
+                (change)="getto()"
+            style="width: 110px; height:  28px; font-size: 11px;"
+            >
+             <option *ngFor="let status_item of  from " value="{{status_item}}">
+            {{status_item}}
+            </option>
+          </select>
+             
+             <br>
+             <label for="drop">Drop Location</label>
+             <select
+             id="ddlViewBy"  
+             class="form-control"
+             [(ngModel)]="selectedto"
+               #tag
+                 (change)="findroute()"
+             style="width: 110px; height:  28px; font-size: 11px;"
+             >
+              <option *ngFor="let status_item of  to " value="{{status_item}}">
+             {{status_item}}
+             </option>
+           </select>
+
+           <label class="lbl" for="email">Route Price: Rs. {{routeprice}}</label>
+           <label class="lbl" for="email">Est. Time:  {{routetime}} days</label>
+           <label class="lbl" for="email">Type:  {{routetype}} </label>
+
+
+           <label for="pickup">Product List:</label>
+           <select
+           id="ddlViewBy"  
+           class="form-control"
+           [(ngModel)]="selectedfrom"
+             #tag
+               (change)="getto()"
+           style="width: 110px; height:  28px; font-size: 11px;"
+           >
+            <option  value="HOUSEHOLD">
+              HOUSEHOLD
+           </option>
+           <option  value="BIKE">
+            BIKE
+         </option>
+         <option  value="BOX">
+          BOX
+       </option>
+       <option  value="APPAREL">
+        APPAREL
+     </option>
+            <option  value="AUTO PARTS">
+              AUTO PARTS
+     </option>
+     <option  value="CHEMICALS">
+      CHEMICALS
+</option>
+<option  value="CHEMICALS">
+  CLOTHING
+</option>
+<option  value="E-COMMERCE">
+  E-COMMERCE
+
+</option>
+<option  value="ELECTRONICS">
+  ELECTRONICS
+
+</option>
+<option  value="ELECTRICALS">
+  ELECTRICALS
+
+</option>
+<option  value="INDUSTRIAL GOODS">
+  INDUSTRIAL GOODS
+</option>
+<option  value="MEDICINES">
+  MEDICINES
+</option>
+<option  value="HANDICRAFTS">
+  HANDICRAFTS
+</option>
+<option  value="PACKAGING MATERIALS">
+PACKAGING MATERIALS
+
+</option>
+<option  value="PLASTIC PRODUCTS">
+  PLASTIC PRODUCTS
+  
+  </option>
+  <option  value="WOODEN PRODUCTS">
+    WOODEN PRODUCTS
+
+    
+    </option>
+    <option  value="WHITE GOODS">
+      WHITE GOODS
+
+  
+      
+      </option>
+      <option  value="SPORTS EQUIPMENT">
+        SPORTS EQUIPMENT
+
+        </option>
+        <option  value="HARDWARE">
+          HARDWARE
+  
+          </option>
+         </select>
+
+          <label class="lbl" for="email">Email:</label>
+          <input class="inp" type="email" id="email" [(ngModel)]="email" />
+          <label class="lbl" for="contact">Contact:</label>
+          <input class="inp" type="text" id="contact" [(ngModel)]="contact" />
+  
+          <div   *ngFor="let box of boxno;let i = index"       >
+            <p style="font-size: 12px; margin-top: 10px;">Box #{{i+1}}</p>
+
+            <div class="input-row">
+              <label class="lbl" for="length">Length (in):</label>
+              <input class="inp"  min="0"  type="number" id="length"   [(ngModel)]="box.length"/>
+    
+              <label class="lbl" for="breadth">Breadth (in):</label>
+              <input class="inp"  min="0" type="number" id="breadth"  [(ngModel)]="box.breadth"/>
+    
+              <label class="lbl" for="height">Height (in):</label> 
+              <input class="inp"   min="0" type="number" id="height"  [(ngModel)]="box.height"/>
+            </div> 
+    
+            <label class="lbl" for="actual">Actual Weight (Per Box in Kg):</label>
+            <input class="inp"   min="0" type="number" id="actual"  [(ngModel)]="box.actual" />
+  
+            <label class="lbl" for="boxes">no. of Boxes</label>
+            <input class="inp"   min="0" type="number" id="boxes"   [(ngModel)]="box.boxes" />
+            
+            
+            
+          </div>
+
+          <div class="row" style="align-self: flex-end;">
+            <div   *ngIf="boxno.length<20"  (click)="addbox()"  style="width: 50px; background-color :greenyellow;"> +  </div>
+            <div   style="width: 100px;"> Boxes</div>
+
+            <div  *ngIf="boxno.length>1" (click)="removebox()"   style="width: 50px; background-color: red;">- </div>
+  
+    
+          </div>
+
+
+          <button (click)="calculateEstimated()" >Calculate Estimate</button>
+          <p style="padding: 12px;" id="estimateResult">kg.{{ totalweight }}</p>
+          
+          <!-- <p style="padding: 12px;" id="priceResult">Estimated Price: Rs{{ box.price }}</p> -->
+
+         
+          
+
+        
+          <p style="padding: 12px;" id="priceResult">Total Amount: Rs{{ totalamount }}</p>
+
+          <button (click)="sendConfirmationEmail()">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+

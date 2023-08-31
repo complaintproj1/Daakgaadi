@@ -1,0 +1,84 @@
+
+  
+
+ <div class="flex flex-wrap items-center" id="bookingSection" >
+    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto" style="margin-top: 10px;margin-bottom: 100px ; width: 700px;">
+      <h3 style="font-size: 40px; text-align: left;">Get an estimate    </h3> 
+      <div class="row">
+     
+        <div class="cont" style="width: 400px;">
+
+            <div class="curvy-box">
+              
+              <label class="lbl" for="email">Name:</label>
+              <input class="inp" type="email" id="name" [(ngModel)]="name" />
+      
+              <label class="lbl" for="email">PICK UP ADDRESS</label>
+              <input class="inp" type="email" id="email" [(ngModel)]="pickup" />
+              <label class="lbl" for="contact">DELIVERY ADDRESS</label>
+              <input class="inp" type="text" id="contact" [(ngModel)]="delivery" />
+              <label class="lbl" for="contact"> ALTERNATE CONTACT NO</label>
+              <input class="inp" type="text" id="area" [(ngModel)]="no2" />
+      
+              <label class="lbl" for="email">PICK DATE</label>
+              <input class="inp" type="email" id="email" [(ngModel)]="pickdate" />
+              <label class="lbl" for="contact">E-WAY Bill</label>
+              <input class="inp" type="text" id="contact" [(ngModel)]="eway" />
+              <label class="lbl" for="contact"> GSTN</label>
+              <input class="inp" type="text" id="area" [(ngModel)]="gst" />
+      
+
+              <label class="lbl" for="email">CUSTOMER INVOICE NO</label>
+              <input class="inp" type="email" id="email" [(ngModel)]="invoiceno" />
+              <label class="lbl" for="contact">Material Description</label>
+              <input class="inp" type="text" id="contact" [(ngModel)]="desc" />
+              <label class="lbl" for="contact"> GOODS VALUE</label>
+              <input class="inp" type="text" id="goods" [(ngModel)]="area" />
+      
+              
+
+             
+              <!-- <label class="lbl" for="actual">Actual Weight (kg):</label>
+              <input class="inp" type="number" id="actual" [value]="actual" (input)="actual" />
+      
+              <label class="lbl" for="boxes">no. of Boxes</label>
+              <input class="inp" type="number" id="boxes" [value]="boxes" (input)="boxes"  /> -->
+      
+              <button (click)="calculateEstimated()" >Book Now</button>
+              <!-- <p style="padding: 12px;" id="estimateResult">kg.{{ estimateResult }}</p>
+              
+              <p style="padding: 12px;" id="priceResult">Estimated Price: Rs{{ price }}</p>
+      
+               -->
+              <!-- <button (click)="sendConfirmationEmail()">Confirm Booking</button> -->
+            </div>
+          </div>
+      </div>
+     
+    </div>
+  </div>
+  
+  <div class="table-container" *ngIf="showTable">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Breadth</th>
+          <th>Height</th>
+          <th>Actual Weight</th>
+          <th>Estimate Result</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ length}}</td>
+          <td>{{ breadth }}</td>
+          <td>{{ height }}</td>
+          <td>{{ actual }}</td>
+          <td>{{estimateResult}}</td>
+          <td>Rs{{ price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

@@ -1,0 +1,277 @@
+
+
+<div class="wrapper" style="background-color: #f7f7f7">
+  <div class="gambo-Breadcrumb">
+    <div class="container">
+      <div class="row" style="padding-top: 10px">
+        <div class="col-md-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a routerLink="/main-page/home-page">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">
+                {{ product?.pname }}
+              </li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="all-product-grid" style="padding: 0px 175px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="product-dt-view">
+            <div class="row">
+              <div class="col-lg-4 col-md-4" style="padding-top: 42px">
+                <carousel
+                  [cellsToShow]="1"
+                  [counter]="true"
+                  style="height: 450px; z-index: 99"
+                >
+                  <div class="carousel-cell">
+                    <img [src]="product?.pphoto" alt="" />
+                  </div>
+                  <div *ngFor="let photo of product?.pictures" class="carousel-cell">
+                    <img [src]="photo" alt="" />
+                  </div>
+                </carousel>
+              </div>
+              <div class="col-lg-8 col-md-8">
+                <div class="product-dt-right">
+                  <h2>{{ product?.pname }}</h2>
+                  <div class="no-stock">
+                    <p class="pd-no">Category -<span>{{ product?.pcat }}</span></p>
+                    <p class="stock-qty" *ngIf="product?.quantity > 3">Available (In Stock)</p>
+                    <p class="stock-qty" style="color: red;" *ngIf="product?.quantity === 3">Only 3 Units Left!</p>
+                    <p class="stock-qty" style="color: red;" *ngIf="product?.quantity === 2">Only 2 Units Left!)</p>
+                    <p class="stock-qty" style="color: red;" *ngIf="product?.quantity === 1">Only 1 Unit Left!</p>
+                    <p class="stock-qty" style="color: red;" *ngIf="product?.quantity === 0">Out of Stock</p>
+                  </div>
+                  <div class="product-group-dt">
+                    <ul>
+                      <li>
+                        <div class="main-price color-discount">
+                          Selling Price<span>{{ product?.dprice | currency:'INR' }} </span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="main-price mrp-price">
+                         <span>{{ product?.aprice | currency:'INR' }}</span>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="main-price color-discount">
+                         <span>/ {{ product?.psub }}</span>
+                        </div>
+                      </li>
+                      <li>
+                        <span class="badge bg-warning text-dark">
+                          {{ (product?.aprice - product?.dprice)/product?.aprice * 100 | number:'2.0-0' }}% Off
+                         </span>
+                      </li>
+                    </ul>
+
+                    <div *ngIf="product?.qty !== 0" style="width: 20%;" class="quantity buttons_added">
+                      <input
+                        (click)="decreaseQty(product?._id)"
+                        type="button"
+                        value="-"
+                        class="minus minus-btn"
+                        style="padding: 0px 3px 3px 0px; font-size: 20px"
+                      />
+                      <input
+                        style="width: 72%;"
+                        type="number"
+                        name="quantity"
+                        [value]="product?.qty"
+                        class="input-text qty text"
+                      />
+                      <input
+                      [disabled]="product?.qty === product?.quantity"
+                      [ngStyle]="{backgroundColor: product?.qty === product?.quantity ? 'gray' : ''}"
+                        (click)="increaseQty(product?._id)"
+                        type="button"
+                        value="+"
+                        class="plus plus-btn"
+                        style="padding: 0px"
+                      />
+                    </div>
+                    
+                    <ul class="ordr-crt-share">
+                      <li *ngIf="product?.qty === 0">
+                        <button [disabled]="product?.quantity === 0" (click)="addProduct(product?._id)" class="add-cart-btn hover-btn">
+                          <span
+                            class="iconify"
+                            data-icon="uil:shopping-cart-alt"
+                            style="margin: 0px 6px 2px 0px"
+                          ></span
+                          >Add to Deal
+                        </button>
+                      </li>
+
+                      <li>
+                        <button [disabled]="product?.quantity === 0" type="button" (click)="buyNow(product)" class="add-cart-btn hover-btn">
+                          <span
+                            class="iconify"
+                            data-icon="ion:basket-outline"
+                            style="margin: 0px 6px 2px 0px"
+                          ></span
+                          >Buy Now
+                        </button>
+                      </li>
+
+                      <li>
+                        <button matToolTip="Share Product" mat-mini-fab color="secondary" (click)="openBottomSheet()">
+                          <mat-icon>share</mat-icon>
+                        </button>
+                      </li>
+                      
+                    </ul>
+                  </div>
+                  <div class="pdp-details">
+                    <ul>
+                      <li>
+                        <div class="pdp-group-dt">
+                          <div class="pdp-icon">
+                            <span
+                              class="iconify"
+                              data-icon="uil:usd-circle"
+                              style="vertical-align: text-bottom"
+                            ></span>
+                          </div>
+                          <div class="pdp-text-dt">
+                            <span>Lowest Price Guaranteed</span>
+                            <p>
+                              Get difference refunded if you find it cheaper
+                              anywhere else.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="pdp-group-dt">
+                          <div class="pdp-icon">
+                            <span
+                              class="iconify icon_wishlist"
+                              data-icon="uil:cloud-redo"
+                              style="vertical-align: text-bottom"
+                            ></span>
+                          </div>
+                          <div class="pdp-text-dt">
+                            <span>Easy Returns & Refunds</span>
+                            <p>
+                              Return products at doorstep and get refund in
+                              seconds.
+                            </p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-12">
+          <div class="pdpt-bg">
+            <div class="pdpt-title">
+              <h4>More Like This</h4>
+            </div>
+            <div class="pdpt-body scrollstyle_4">
+              <div *ngFor="let prod of relatedProducts" class="cart-item border_radius">
+                <a (click)="refresh()" [routerLink]="['/main-page/single-product', prod?._id]" class="cart-product-img">
+                  <img [src]="prod?.pphoto" alt="" />
+                  <div class="offer-badge">{{ (prod?.aprice - prod?.dprice)/prod?.aprice * 100 | number:'2.0-0' }}% Off</div>
+                </a>
+                <div class="cart-text">
+                  <h4>{{ prod?.pname }}</h4>
+                  <div class="qty-group">
+                    <div class="button">
+                      <button
+                        (click)="addProduct(prod?._id)"
+                        mat-raised-button
+                        color="secondary"
+                        class="small-items"
+                        style="color: black; background-color: #f55d2c;"
+                      >
+                        <span class="cart-icon">
+                          <span
+                            style="padding-bottom: 2px"
+                            class="iconify"
+                            data-icon="uil:shopping-cart-alt"
+                          ></span
+                        ></span>
+                      </button>
+                    </div>
+                    <div class="cart-item-price">{{ prod?.dprice | currency:'INR' }}<span>{{ prod?.aprice | currency:'INR' }}</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-12">
+          <div class="pdpt-bg">
+            <div class="pdpt-title">
+              <h4>Product Details</h4>
+            </div>
+            <div class="pdpt-body scrollstyle_4">
+              <div class="pdct-dts-1">
+                <div class="pdct-dt-step">
+                  <h4>Description</h4>
+                  <p>
+                    {{ product?.pdes }}
+                  </p>
+                </div>
+                <div class="pdp-group-dt">
+                  <div class="pdct-dt-step" style="margin: 5px;">
+                    <h4>Moisture(%)</h4>
+                    <p>
+                      {{ product?.moi }}
+                    </p>
+                  </div>
+                  <div class="pdct-dt-step" style="margin: 5px;">
+                    <h4>Dust(%)</h4>
+                    <p>
+                      {{ product?.dust }}
+                    </p>
+                  </div>
+                  <div class="pdct-dt-step" style="margin: 5px;">
+                    <h4>Gross Calorific Value(%)</h4>
+                    <p>
+                      {{ product?.gcv }}
+                    </p>
+                  </div>
+                </div>
+                <div class="pdct-dt-step">
+                  <h4>Seller</h4>
+                  <div class="product_attr">
+                    Shop ID  : 
+                    {{ product?.vid }}
+                  </div>
+                </div>
+                <div class="pdct-dt-step">
+                  <h4>Reviews</h4>
+                  
+                </div>
+
+                <p *ngFor="let review of product?.reviews; index as i">
+                  - {{ review }} 
+                  ( <span *ngIf="product?.stars[i] === '1' || product?.stars[i] === '2' || product?.stars[i] === '3' || product?.stars[i] === '4' || product?.stars[i] === '5'" class="iconify" data-icon="bi:star-fill" style="color: gold; margin-bottom: 3px;" data-width="18" data-height="18"></span> 
+                  <span *ngIf="product?.stars[i] == '2' || product?.stars[i] === '3' || product?.stars[i] === '4' || product?.stars[i] === '5'" class="iconify" data-icon="bi:star-fill" style="color: gold; margin-bottom: 3px;" data-width="18" data-height="18"></span> 
+                  <span *ngIf="product?.stars[i] == '3' || product?.stars[i] === '4' || product?.stars[i] === '5'" class="iconify" data-icon="bi:star-fill" style="color: gold; margin-bottom: 3px;" data-width="18" data-height="18"></span> 
+                  <span *ngIf="product?.stars[i] == '4' || product?.stars[i] === '5'" class="iconify" data-icon="bi:star-fill" style="color: gold; margin-bottom: 3px;" data-width="18" data-height="18"></span> 
+                  <span *ngIf="product?.stars[i] == '5'" class="iconify" data-icon="bi:star-fill" style="color: gold; margin-bottom: 3px;" data-width="18" data-height="18"></span> )
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

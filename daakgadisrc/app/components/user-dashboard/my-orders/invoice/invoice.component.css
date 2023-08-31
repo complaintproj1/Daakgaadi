@@ -1,0 +1,13 @@
+p{
+    font-size: 14px !important;
+}
+.bshadow{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(5px 5px 5px #222222);
+    opacity: .5;
+    width:100px;
+  
+  }
+ 

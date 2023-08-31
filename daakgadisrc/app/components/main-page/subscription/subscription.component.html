@@ -1,0 +1,525 @@
+<div *ngIf="loaderService.isLoading | async" class="row">
+    <div class="loading col-12">
+      <span style="--i:0;"></span>
+      <span style="--i:1;"></span>
+      <span style="--i:2;"></span>
+      <span style="--i:3;"></span>
+      <span style="--i:4;"></span>
+      <span style="--i:5;"></span>
+      <span style="--i:6;"></span>
+    </div>
+  </div>
+  
+  <section [class.login]="loaderService.isLoading | async" style="background-color: #f7f7f7; width:1500px; ">
+    <div class="relative pt-16 pb-32 flex content-center items-center justify-center min-h-screen-75" style="background-image: url('https://png.pngtree.com/thumb_back/fh260/background/20190221/ourmid/pngtree-delivery-banner-poster-background-image_12237.jpg');   background-repeat: no-repeat;  background-size: cover; background-color: grey;   padding-top: 100px;  ">
+      
+      
+      <div class="container relative mx-auto" >
+        <div class="items-center flex flex-wrap">
+          <div class="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center" >
+            <div class="pr-12">
+              <p style=" font-size:35px;padding-top: 100px;">
+                Delivery??  </p>
+                <p class=" font-semibold " style=" font-size:35px">
+                 Tension not DaakGaadi is here..!!</p>
+  
+                 <p  style="padding: 20px; font-size: 13px;">
+                 Warmly welcome you to DAAK GAADI, which provides all types of Transport & Courier Services at your doorstep. Our head office is in Gurgaon. Daak Gaadi Delhi NCR is the fastest transport and parcel courier company and we have a fully trained and qualified team to serve our clients. The officers we have are the backbone of our logistics. We strive to provide you flawless services within a stipulated time period. Daak Gaadi always aims to provide the best services to its customers. As an emerging express logistics company with an unparalleled and expanding network, Daak Gaadi is dedicated to reach every nook and corner of India in the shortest possible time. With a transport and parcel courier base spread across various commercial and non-commercial areas, We have pickup and Delivery Points covering Almost all Delhi Ncr, Gurgaon, Manesar, Faridabad, Noida, Ghaziabad, Bhiwadi, Bawal, Rewari, Haryana, Punjab, Rajasthan and Gujarat.</p>
+              
+              
+            </div>
+            <div style="padding-top: 100px">
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px" style="transform: translateZ(0)">
+        <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0">
+          <polygon class="text-blueGray-200 fill-current" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+  
+    <div  style="padding: 60px 74px 0px 74px">
+      <div >
+        <div class="col-md-12">
+          <div class="main-title-tt">
+            <div class="main-title-left">
+             
+              <h2>Select Services</h2>
+            </div>
+          </div>
+        </div>
+
+      
+        
+        <div class="row">
+          
+          <div style="width: 300px;">
+            <div class="product-item" [routerLink]="['/main-page', 'partload']" >
+              <a class="product-img">
+                <img class="photo" src="./assets/img/truck (1).png" alt="" />
+                
+              </a>
+              <div >
+                <p>TRANSPORT-PTL(PART LOAD)</p>
+   
+                   
+                  
+                 </div>
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item" [routerLink]="['/main-page', 'parcel']"   >
+              <a class="product-img">
+                <img class="photo" src="./assets/img/box.png" alt="" />
+               
+              </a>
+              <div >
+                <p>PARCEL</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item"    [routerLink]="['/main-page', 'fullload']"  >
+              <a class="product-img">
+                <img class="photo" src="./assets/img/truck.png" alt="" />
+               
+              </a>
+              <div >
+                  
+                <p>TRUCK FULL LOAD</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+
+
+          <div  style="width: 300px;">
+            <div class="product-item"   [routerLink]="['/main-page', 'packer']">
+              <a class="product-img">
+                <img class="photo" src="./assets/img/furniture.png" alt="" />
+                
+              </a>
+              <div >
+                <p>PACKERS MOVERS</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px; margin-bottom: 70px;">
+          
+          <div style="width: 300px;">
+            <div class="product-item"   [routerLink]="['/main-page', 'bike']">
+              <a class="product-img">
+                <img class="photo" src="./assets/img/Untitled design.png" alt="" />
+               
+              </a>
+              <div >
+                <p>BIKE TRANSPORT</p>
+   
+                   
+                  
+                 </div>
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item"  [routerLink]="['/main-page', 'car']">
+              <a class="product-img">
+                <img class="photo" src="./assets/img/tow-truck_4833911.png" alt="" />
+                
+              </a>
+              <div >
+                <p>CAR TRANSPORT</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item"   [routerLink]="['/main-page', 'warehouse']">
+              <a class="product-img">
+                <img class="photo" src="./assets/img/storage-stacks_2821864.png" alt="" />
+                
+              </a>
+              <div >
+                <p>WAREHOUSE STORAGE</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+
+
+          <div  style="width: 300px;">
+            <div class="product-item"   [routerLink]="'../../sign-in'">
+              <a class="product-img">
+                <img class="photo" src="https://img.icons8.com/?size=512&id=kJlyCVWJrclv&format=png" alt="" />
+                
+              </a>
+              <div >
+                <p>TRACK YOUR ORDER</p>
+   
+                   
+                  
+                 </div>
+            </div>
+          </div>
+        </div>
+       
+     
+        
+
+            
+       
+       
+     
+        
+      </div>
+    
+      <!-- <div class="section145" style="padding-top: 50px">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title-tt">
+                <div class="main-title-left">
+                  <span>For You</span>
+                  <h2>Added New Products</h2>
+                </div>
+                <a
+                  class="see-more-btn"
+                  [routerLink]="['/main-page', 'new-products']"
+                  >See All</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <section class="pb-20 relative block bg-blueGray-800" style="height: 750px; background-color: black;">
+      <div 
+        class="bottom-0 top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20"
+        style="transform: translateZ(0)"
+      >
+        <svg
+          class="absolute bottom-0 overflow-hidden"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          version="1.1"
+          viewBox="0 0 2560 100"
+          x="0"
+          y="0"
+        >
+          <polygon
+            class="text-blueGray-800 fill-current"
+            points="2560 0 2560 100 0 100"
+          ></polygon>
+        </svg>
+      </div>
+  
+      <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
+        <div class="flex flex-wrap text-center justify-center">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2 class="text-4xl font-semibold text-white">Our Reach</h2>
+           
+          </div>
+        </div>
+        <div class="flex flex-wrap mt-12 justify-center">
+          <div class="w-full lg:w-3/12 px-4 text-center">
+            <div style="display: flex; justify-content: center;">
+              <img src="./assets/img/Untitled_design__1_-removebg-preview.png">
+            </div>
+          </div>
+        </div>
+  </div>      
+    </section>
+
+    <div  style="padding: 60px 74px 0px 74px">
+      <div >
+        <div class="col-md-12">
+          <div class="main-title-tt">
+            <div class="main-title-left">
+             
+              <h2>Gallery</h2>
+            </div>
+          </div>
+        </div>
+
+      
+        
+        <div class="row">
+          
+          <div style="width: 300px;">
+            <div class="product-item" >
+              <a class="product-img">
+                <img src="http://daakgaadi.com/img/warehouse-stograge-with-stacked-boxes-rows_79295-10773-1.jpg">  
+                
+              </a>
+              
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="http://daakgaadi.com/img/bike-packing-moving-2.jpg" alt="" />
+               
+              </a>
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="http://daakgaadi.com/img/Office-shifting-1.jpg" alt="" />
+               
+              </a>
+             
+            </div>
+          </div>
+
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="http://daakgaadi.com/img/best-packing-materials-1.jpg" alt="" />
+                
+              </a>
+             
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 20px; margin-bottom: 70px;">
+          
+          <div style="width: 300px;">
+            <div class="product-item" >
+              <a class="product-img">
+                <img class="photo" src="http://daakgaadi.com/img/homeshifting.jpg" alt="" />
+               
+              </a>
+            
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="http://daakgaadi.com/img/a-one-quality-packing-1.jpg" alt="" />
+                
+              </a>
+              
+            </div>
+          </div>
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcToDNCdBf3jGxV18Gxgi4uQgbpZRx1TYpNdji_4vum4ueNibvk2PMon-5cBNG6WCk4AmHQ&usqp=CAU" alt="" />
+                
+              </a>
+            
+            </div>
+          </div>
+
+
+          <div  style="width: 300px;">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRN94Wr7jsH0TYkIMF9iiRAtzUoi8w10jXBwZop8eOxMk5oeeVWyu1DHwvoou4YawCdVY&usqp=CAU" alt="" />
+                
+              </a>
+              
+            </div>
+          </div>
+        </div>
+       
+     
+        
+
+            
+       
+       
+     
+        
+      </div>
+    
+      <!-- <div class="section145" style="padding-top: 50px">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="main-title-tt">
+                <div class="main-title-left">
+                  <span>For You</span>
+                  <h2>Added New Products</h2>
+                </div>
+                <a
+                  class="see-more-btn"
+                  [routerLink]="['/main-page', 'new-products']"
+                  >See All</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+
+    <section class="pb-20 relative block bg-blueGray-800" style="height: 500px;background-color: #000; margin-top: 20px;">
+  
+      <div style="padding-top: 20px">
+
+      </div>
+
+      <div class="container mx-auto px-4 lg:pt-24 lg:pb-64">
+        <div class="flex flex-wrap text-center justify-center">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2  style="padding-top: 20px" class="text-4xl font-semibold text-white">Client Satisfaction</h2>
+           
+          </div>
+        </div>
+        <div class="flex flex-wrap mt-12 justify-center">
+          <div class="w-full lg:w-3/12 px-4 text-center">
+            <div style="display: flex; justify-content: center;">
+              <div class="testimonial-slider">
+                <ul class="slider">
+                  <li>
+                    <div class="testimonial-slider-content">
+                      <q style="font-size: 22px; color: #fff;">Best I have used yet. Professional and friendly nature of all the helpers. Loved it and recommend them to all.
+          
+                      </q>
+                      <p class="source">- Kunal Dass            </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="testimonial-slider-content">
+                      <q style="font-size: 22px;color: #fff">I got the service from helper cart. Got all the good in very good condition. Highely efficient and hard working staff. Thankyou team.</q>
+                      <p class="source">- Neha Sharma            </p>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="testimonial-slider-content">
+                      <q style="font-size: 22px;color: #fff">Very cooperative and courteous staff. And accommodating of the schedule. I have had to deal with bigger companies also but these people work at very competitive rates and great services. Highly recommend.</q>
+                      <p class="source">- Smriti Kumar            </p>
+                    </div>
+                  </li>
+                  <!-- <li>
+                    <div class="testimonial-slider-content">
+                      <q>This is the last quote, I can't believe how well this worked!</q>
+                      <p class="source">- Guillermo O, TX</p>
+                    </div>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+  </div>      
+    </section>
+
+    <section class="pb-20 relative block bg-blueGray-800" style="height: 200px;background-color: firebrick; margin-top: 20px;">
+  
+      <div style="padding-top: 20px">
+
+      </div>
+
+      <div class="height:100px; background-color: red;">
+        <div class="flex flex-wrap text-center justify-center">
+          <div class="w-full lg:w-6/12 px-4">
+            <h2   style="color: black;">T&C</h2>
+           
+            <div class="height:50px"></div>
+            <div style="color: white;">* Transit Time: Transit excludes the date of booking.
+              The following goods are not acceptable for movement - Jewelry, Arms & Ammunition, 
+              Hazardous materials like Crackers, Explosives, Chemicals, Battery Acids, and Inflammable Oils; 
+              such as Diesel, Petrol, Kerosene, Gasoline, Narcotics & Counter brand Items.
+              ** Your Price: The rates shown are indicative and not the final price. It includes Freight, ROV, Basic, DPH/ATF, Non-Metro, and ESS charges. The final price would depend on the exact volume, the value of the shipment and if any special service charges, etc. The charges are exclusive of Taxes
+              
+              * Freight Refund: The Refund of freight may be entertained subject to Force Majeures such as Strikes Bandh, Elections, Rains, Flood…
+              </div>
+          </div>
+        </div>
+       
+  </div>      
+    </section>
+    <div class="all-product-grid" style="padding: 30px 175px">
+      <div class="container" style="align-items: center">
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <div class="contact-title">
+              <h2>Submit customer service request</h2>
+              <p>
+                If you have a question about our service or have an issue to
+                report, please send a request and we will get back to you as soon
+                as possible.
+              </p>
+            </div>
+            <div class="contact-form">
+  
+              <form #f="ngForm" (ngSubmit)="sendMessage()">
+                <div class="row">
+                  <p>Full Name</p>
+                  <mat-form-field appearance="outline" color="warn">
+                    <input formControlName="customerName" matInput placeholder="Your Full Name" />
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                  <p>Email Address</p>
+                  <mat-form-field appearance="outline" color="warn">
+                    <input formControlName="customerEmail" matInput placeholder="Your Email" />
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                  <p>Subject</p>
+                  <mat-form-field appearance="outline" color="warn">
+                    <input formControlName="customerAddress" matInput placeholder="Subject" />
+                  </mat-form-field>
+                </div>
+                <div class="row">
+                  <p>Message</p>
+                  <mat-form-field appearance="outline" color="warn">
+                    <textarea formControlName="message" matInput placeholder="Write Message"></textarea>
+                  </mat-form-field>
+                </div>
+  
+                <button
+                  class="next-btn16 hover-btn mt-3"
+                  type="submit"
+                  data-btntext-sending="Sending..."
+                >
+                  Submit Request
+                </button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </section>
+  

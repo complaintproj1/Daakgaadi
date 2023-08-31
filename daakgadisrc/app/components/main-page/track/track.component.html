@@ -1,0 +1,180 @@
+<div  style="padding: 100px 74px 0px 74px">
+  <div >
+    <div class="col-md-12">
+      <div class="main-title-tt">
+        <div class="main-title-left">
+         
+          <h2>Rent Mini Trucks
+          </h2>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-left: 400px;" >
+      <div style="width: 300px;  color: blue; "   *ngIf="light" (click)="changeligh(true)">
+        Light (below 750kg)
+
+
+      </div>
+      <div style="width: 300px; color: grey;"  *ngIf="!light" (click)="changeligh(true)">
+        Light (below 750kg)
+
+
+      </div>
+
+      <div style="width: 300px;  color: blue;"  *ngIf="!light"  (click)="changeligh(false)">
+        Heavy (above 750kg) 
+      </div>
+      <div style="width: 300px; color: grey;  "  *ngIf="light"  (click)="changeligh(false)">
+        Heavy (above 750kg) 
+      </div>
+
+    </div>
+  
+    
+    <div class="row" *ngIf="light" style="margin-top: 20px; margin-bottom: 70px;" >
+      
+      <div style="width: 300px;">
+        <div class="product-item" (click)="addvehicle('t1')" >
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t1.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">750kg</p>
+            
+            <p>Tata Ace            </p>
+           
+            
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+             </div>
+          
+        </div>
+      </div>
+
+      <div  style="width: 300px;">
+        <div class="product-item" (click)="addvehicle('t2')"   >
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t2.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">750kg</p>
+            <p>Ace (Helper)            </p>
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+              
+             </div>
+        </div>
+      </div>
+
+      <div  style="width: 300px; ">
+        <div class="product-item"    (click)="addvehicle('t3')"   >
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t3.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">500kg</p>
+            <p>3 Wheeler            </p>
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+              
+             </div>
+        </div>
+      </div>
+
+
+      <div  style="width: 300px;">
+        <div class="product-item"   (click)="addvehicle('t4')">
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t3.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">500kg</p>
+            <p>3 Wheeler (Helper)</p>
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+              
+             </div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!light" class="row" style="margin-top: 20px; margin-bottom: 70px;">
+      <div  style="width: 350px;">
+       
+      </div>       
+      <div style="width: 300px;">
+        <div class="product-item" (click)="addvehicle('t5')" >
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t5.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">2500kg</p>
+            <p>Tata 407
+            </p>
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+             </div>
+          
+        </div>
+      </div>
+
+      <div  style="width: 300px;">
+        <div class="product-item" (click)="addvehicle('t6')"   >
+          <a class="product-img">
+            <img class="photo" src="./assets/img/t6.svg" alt="" />
+            
+          </a>
+          <div >
+            <p style="font-size: 8px; color:grey;">1250kg</p>
+            <p>Pickup 8ft            </p>
+            <p style="font-size: 12px; color:blue;">Book Now</p>
+               
+              
+              
+             </div>
+        </div>
+      </div>
+
+    </div>
+   
+ 
+    
+
+        
+   
+   
+ 
+    
+  </div>
+
+  <!-- <div class="section145" style="padding-top: 50px">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="main-title-tt">
+            <div class="main-title-left">
+              <span>For You</span>
+              <h2>Added New Products</h2>
+            </div>
+            <a
+              class="see-more-btn"
+              [routerLink]="['/main-page', 'new-products']"
+              >See All</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

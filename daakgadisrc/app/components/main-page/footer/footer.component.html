@@ -1,0 +1,135 @@
+<footer class="footer">
+  <div class="footer-first-row">
+    <div class="container" >
+      <div class="row">
+        <div class="contact-us col-md-6 col-sm-6">
+          <ul class="call-email-alt">
+            <li>
+              <a (click)="showCopyToClipboard()" cdkCopyToClipboard="{{ 9717530947 }}" class="callemail">
+                <span class="iconify" data-icon="uil:dialpad-alt"></span>
+                +91 9999167600
+                </a
+              >
+            </li>
+            <li>
+              <a href="mailto:biomasspalwal@gmail.com" class="callemail">
+                <span class="iconify" data-icon="uil:envelope-alt"></span>
+                <span
+                  class="__cf_email__"
+                  data-cfemail="0d64636b624d6a6c606f627e787d687f606c7f666879236e6260"
+                  >info@daakgaadi.com</span
+                ></a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6 col-sm-6">
+          <div class="social-links-footer">
+            <ul>
+              <li>
+                <a (click)="openSocialLinks('fb')"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <!-- <li>
+                <a><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a><i class="fab fa-google-plus-g"></i></a>
+              </li>
+              <li>
+                <a><i class="fab fa-linkedin-in"></i></a>
+              </li> -->
+              <!-- <li>
+                <a (click)="openSocialLinks('insta')"><i class="fab fa-instagram"></i></a>
+              </li> -->
+              <li>
+                <a (click)="openSocialLinks('whats')"><i class="fab fa-whatsapp"></i></a>
+              </li>
+              <!-- <li>
+                <a><i class="fab fa-pinterest-p"></i></a>
+              </li> -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-second-row">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="second-row-item">
+            <h4>Categories</h4>
+            <ul>
+              <li *ngFor="let category of categories">
+                <a [matMenuTriggerFor]="subcategories" style="cursor: pointer;">{{ category.name }}</a>
+                <mat-menu #subcategories="matMenu">
+                  <button (click)="refresh(subcategory.sid)" [routerLink]="['/main-page/featured-products', subcategory.sid]" *ngFor="let subcategory of category.subcategories" mat-menu-item>{{ subcategory?.name }}</button>
+                </mat-menu>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="second-row-item">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a routerLink="/main-page/terms-&-condition">T&C</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="second-row-item">
+            <h4>Top Cities</h4>
+            <ul>
+              <li><a>Gurugram</a></li>
+              <li><a>New Delhi</a></li>
+              <li><a>Bangaluru</a></li>
+              <li><a>Mumbai</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-sm-6">
+          <div class="second-row-item-app">
+            <h4>Download App</h4>
+            <ul>
+              <li>
+                <a href="https://play.google.com/store/apps/details?id=com.vakeem.vakeemagro" target="_blank"
+                  ><img
+                    class="download-btn"
+                    src="assets/images/download-1.svg"
+                    alt=""
+                /></a>
+              </li>
+              <li>
+                <a
+                href="https://apps.apple.com/us/app/vakeem-agro/id6444198637" target="_blank"
+                  ><img
+                    class="download-btn"
+                    src="assets/images/download-2.svg"
+                    alt=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="second-row-item-app">
+           
+            <ul>
+              <li>
+                <a href="https://play.google.com/store/apps/details?id=com.vakeem.vakeemagro" target="_blank"
+                  ><img
+                    class="download-btn"
+                    src="assets/img/Daak-Gaddi-logo-03-removebg-preview.png"
+                    alt=""
+                /></a>
+              </li>
+             
+            </ul>
+          </div>
+         
+        </div>
+
+      </div>
+    </div>
+  </div>
+</footer>

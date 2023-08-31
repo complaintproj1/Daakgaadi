@@ -1,0 +1,812 @@
+<div *ngIf="loaderService.isLoading | async" class="row">
+  <div class="loading col-12">
+    <span style="--i:0;"></span>
+    <span style="--i:1;"></span>
+    <span style="--i:2;"></span>
+    <span style="--i:3;"></span>
+    <span style="--i:4;"></span>
+    <span style="--i:5;"></span>
+    <span style="--i:6;"></span>
+  </div>
+</div>
+
+<section [class.login]="loaderService.isLoading | async" style="background-color: #f7f7f7; width:1500px">
+  <div class="container"  style="padding: 140px 74px 0px 74px" >
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner" style="padding: 10px">
+        <div class="carousel-item active">
+          <div style="display: flex; justify-content: center">
+            <img
+              class="carousel-img"
+              style="width: 90%; height: 400px"
+              src="https://wallup.net/wp-content/uploads/2017/03/28/438402-macro-plants-fruit-berries.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="container">
+            <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+                <p>6% Off</p>
+                <div class="top-text-1">Buy More & Save More</div>
+                <span>Fresh Vegetables</span>
+              </div>
+              <a routerLink="/main-page/new-products" class="Offer-shop-btn hover-btn">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div style="display: flex; justify-content: center">
+            <img
+              class="carousel-img"
+              style="width: 90%; height: 400px"
+              src="https://www.quiet-corner.com/wp-content/uploads/2016/06/Growing-fruit-and-vegetables-July.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="container">
+            <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+                <p>6% Off</p>
+                <div class="top-text-1">Buy More & Save More</div>
+                <span>Fresh Vegetables</span>
+              </div>
+              <a routerLink="/main-page/new-products" class="Offer-shop-btn hover-btn">Shop Now</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div style="display: flex; justify-content: center">
+            <img
+              class="carousel-img"
+              style="width: 90%; height: 400px"
+              src="https://fthmb.tqn.com/LuRv3f71Vqp08JyhHMIWPxrziAU=/2125x1414/filters:fill(auto,1)/177220081-56a349fc3df78cf7727cb92c.jpg"
+              alt=""
+            />
+          </div>
+
+          <div class="container">
+            <div class="offer-text-dt">
+              <div class="offer-top-text-banner">
+                <p>6% Off</p>
+                <div class="top-text-1">Buy More & Save More</div>
+                <span>Fresh Vegetables</span>
+              </div>
+              <a routerLink="/main-page/new-products" class="Offer-shop-btn hover-btn">Shop Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        style="height: 350px"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <button mat-mini-fab aria-hidden="true" class="prev">
+          <mat-icon>navigate_before</mat-icon>
+        </button>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        style="height: 350px"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <button mat-mini-fab aria-hidden="true" class="next">
+          <mat-icon>navigate_next</mat-icon>
+        </button>
+      </button>
+    </div>
+  </div>
+
+  <div class="container" style="padding: 60px 74px 0px 74px">
+    <div class="container">
+      <div class="col-md-12">
+        <div class="main-title-tt">
+          <div class="main-title-left">
+            <span>For You</span>
+            <h2>Top Featured Products</h2>
+          </div>
+        </div>
+      </div>
+      <carousel
+      *ngIf="products.length!=0"
+        [autoplay]="true"
+        [autoplayInterval]="5000"
+        [loop]="true"
+        [cellsToShow]="5"
+        [arrowsOutside]="true"
+        style="height: 400px; z-index: 99"
+      >
+      
+        <div *ngFor="let product of products; index as i" class="carousel-cell">
+          <div class="product-item">
+            <a class="product-img">
+              <img class="photo" [routerLink]="['/main-page/single-product', product._id]" [src]="product.pphoto" alt="" />
+              <div class="product-absolute-options">
+                <span class="offer-badge-1">{{
+                  ((product.aprice - product.dprice) / product.aprice) * 100
+                    | number: "2.0-0"
+                }}% off</span>
+
+                <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+                  <span 
+                    class="iconify icon_wishlist"
+                    data-icon="bi:heart-fill"
+                    style="vertical-align: text-bottom"
+                  ></span>
+                </span>
+
+                <ng-template #goto>
+                  <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+                    <span
+                    class="iconify icon_wishlist"
+                    data-icon="bi:heart"
+                    style="vertical-align: text-bottom"
+                  ></span>
+                  </span>
+                </ng-template>
+
+              </div>
+            </a>
+            <div class="product-text-dt">
+              <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+              <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+              <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+              <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+              <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+              <h4>{{ product.pname }}</h4>
+              <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span> <span> / {{ product.unit }}</span> </div>
+              <div class="qty-cart">
+                <div class="button" style="width: 100%;">
+                  <button
+                  [disabled]="product.quantity === 0"
+                  *ngIf="product.qty === 0"
+                  class="addcartbtn"
+                  (click)="addProduct(product._id)"
+                    mat-raised-button
+                    color="secondary"
+                    style="width: 100%; cursor: pointer; height: 32px;"
+                  >
+                    Add To Deal
+                    <span class="cart-icon">
+                      <span
+                        style="padding-bottom: 2px"
+                        class="iconify"
+                        data-icon="uil:shopping-cart-alt"
+                      ></span
+                    ></span>
+                  </button>
+                </div>
+                
+                <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+                  <input
+                    (click)="decreaseQty(product._id)"
+                    type="button"
+                    value="-"
+                    class="minus minus-btn"
+                    style="padding: 0px 3px 3px 0px; font-size: 20px"
+                  />
+                  <input
+                    style="width: 72%;"
+                    type="number"
+                    name="quantity"
+                    [value]="product.qty"
+                    class="input-text qty text"
+                  />
+                  <input
+                    [disabled]="product.qty === product.quantity"
+                    [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+                    (click)="increaseQty(product._id)"
+                    type="button"
+                    value="+"
+                    class="plus plus-btn"
+                    style="padding: 0px"
+                  />
+                </div>
+                
+              </div> 
+            </div>
+          </div>
+        </div>
+      </carousel>
+
+      <carousel
+      *ngIf="products2.length!=0"
+      [autoplay]="true"
+      [autoplayInterval]="5000"
+      [loop]="true"
+      [cellsToShow]="5"
+      [arrowsOutside]="true"
+      style="height: 400px; z-index: 99"
+    >
+    
+      <div *ngFor="let product of products2; index as i" class="carousel-cell">
+        <div class="product-item">
+          <a class="product-img">
+            <img class="photo" [routerLink]="['/main-page/single-product', product._id]" [src]="product.pphoto" alt="" />
+            <div class="product-absolute-options">
+              <span class="offer-badge-1">{{
+                ((product.aprice - product.dprice) / product.aprice) * 100
+                  | number: "2.0-0"
+              }}% off</span>
+
+              <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+                <span 
+                  class="iconify icon_wishlist"
+                  data-icon="bi:heart-fill"
+                  style="vertical-align: text-bottom"
+                ></span>
+              </span>
+
+              <ng-template #goto>
+                <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+                  <span
+                  class="iconify icon_wishlist"
+                  data-icon="bi:heart"
+                  style="vertical-align: text-bottom"
+                ></span>
+                </span>
+              </ng-template>
+
+            </div>
+          </a>
+          <div class="product-text-dt">
+            <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+            <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+            <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+            <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+            <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+            <h4>{{ product.pname }}</h4>
+            <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span> <span> / {{ product.unit }}</span> </div>
+            <div class="qty-cart">
+              <div class="button" style="width: 100%;">
+                <button
+                [disabled]="product.quantity === 0"
+                *ngIf="product.qty === 0"
+                class="addcartbtn"
+                (click)="addProduct(product._id)"
+                  mat-raised-button
+                  color="secondary"
+                  style="width: 100%; cursor: pointer; height: 32px;"
+                >
+                  Add To Deal
+                  <span class="cart-icon">
+                    <span
+                      style="padding-bottom: 2px"
+                      class="iconify"
+                      data-icon="uil:shopping-cart-alt"
+                    ></span
+                  ></span>
+                </button>
+              </div>
+              
+              <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+                <input
+                  (click)="decreaseQty(product._id)"
+                  type="button"
+                  value="-"
+                  class="minus minus-btn"
+                  style="padding: 0px 3px 3px 0px; font-size: 20px"
+                />
+                <input
+                  style="width: 72%;"
+                  type="number"
+                  name="quantity"
+                  [value]="product.qty"
+                  class="input-text qty text"
+                />
+                <input
+                  [disabled]="product.qty === product.quantity"
+                  [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+                  (click)="increaseQty(product._id)"
+                  type="button"
+                  value="+"
+                  class="plus plus-btn"
+                  style="padding: 0px"
+                />
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </carousel>
+
+
+    <carousel
+    *ngIf="products3.length!=0"
+    [autoplay]="true"
+    [autoplayInterval]="5000"
+    [loop]="true"
+    [cellsToShow]="5"
+    [arrowsOutside]="true"
+    style="height: 400px; z-index: 99"
+  >
+  
+    <div *ngFor="let product of products3; index as i" class="carousel-cell">
+      <div class="product-item">
+        <a class="product-img">
+          <img class="photo" [routerLink]="['/main-page/single-product', product._id]" [src]="product.pphoto" alt="" />
+          <div class="product-absolute-options">
+            <span class="offer-badge-1">{{
+              ((product.aprice - product.dprice) / product.aprice) * 100
+                | number: "2.0-0"
+            }}% off</span>
+
+            <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+              <span 
+                class="iconify icon_wishlist"
+                data-icon="bi:heart-fill"
+                style="vertical-align: text-bottom"
+              ></span>
+            </span>
+
+            <ng-template #goto>
+              <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+                <span
+                class="iconify icon_wishlist"
+                data-icon="bi:heart"
+                style="vertical-align: text-bottom"
+              ></span>
+              </span>
+            </ng-template>
+
+          </div>
+        </a>
+        <div class="product-text-dt">
+          <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+          <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+          <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+          <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+          <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+          <h4>{{ product.pname }}</h4>
+          <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span> <span> / {{ product.unit }}</span> </div>
+          <div class="qty-cart">
+            <div class="button" style="width: 100%;">
+              <button
+              [disabled]="product.quantity === 0"
+              *ngIf="product.qty === 0"
+              class="addcartbtn"
+              (click)="addProduct(product._id)"
+                mat-raised-button
+                color="secondary"
+                style="width: 100%; cursor: pointer; height: 32px;"
+              >
+                Add To Deal
+                <span class="cart-icon">
+                  <span
+                    style="padding-bottom: 2px"
+                    class="iconify"
+                    data-icon="uil:shopping-cart-alt"
+                  ></span
+                ></span>
+              </button>
+            </div>
+            
+            <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+              <input
+                (click)="decreaseQty(product._id)"
+                type="button"
+                value="-"
+                class="minus minus-btn"
+                style="padding: 0px 3px 3px 0px; font-size: 20px"
+              />
+              <input
+                style="width: 72%;"
+                type="number"
+                name="quantity"
+                [value]="product.qty"
+                class="input-text qty text"
+              />
+              <input
+                [disabled]="product.qty === product.quantity"
+                [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+                (click)="increaseQty(product._id)"
+                type="button"
+                value="+"
+                class="plus plus-btn"
+                style="padding: 0px"
+              />
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </carousel>
+
+
+  <carousel
+  *ngIf="products4.length!=0"
+  [autoplay]="true"
+  [autoplayInterval]="5000"
+  [loop]="true"
+  [cellsToShow]="5"
+  [arrowsOutside]="true"
+  style="height: 400px; z-index: 99"
+>
+
+  <div *ngFor="let product of products4; index as i" class="carousel-cell">
+    <div class="product-item">
+      <a class="product-img">
+        <img class="photo" [routerLink]="['/main-page/single-product', product._id]" [src]="product.pphoto" alt="" />
+        <div class="product-absolute-options">
+          <span class="offer-badge-1">{{
+            ((product.aprice - product.dprice) / product.aprice) * 100
+              | number: "2.0-0"
+          }}% off</span>
+
+          <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+            <span 
+              class="iconify icon_wishlist"
+              data-icon="bi:heart-fill"
+              style="vertical-align: text-bottom"
+            ></span>
+          </span>
+
+          <ng-template #goto>
+            <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+              <span
+              class="iconify icon_wishlist"
+              data-icon="bi:heart"
+              style="vertical-align: text-bottom"
+            ></span>
+            </span>
+          </ng-template>
+
+        </div>
+      </a>
+      <div class="product-text-dt">
+        <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+        <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+        <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+        <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+        <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+        <h4>{{ product.pname }}</h4>
+        <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span> <span> / {{ product.unit }}</span> </div>
+        <div class="qty-cart">
+          <div class="button" style="width: 100%;">
+            <button
+            [disabled]="product.quantity === 0"
+            *ngIf="product.qty === 0"
+            class="addcartbtn"
+            (click)="addProduct(product._id)"
+              mat-raised-button
+              color="secondary"
+              style="width: 100%; cursor: pointer; height: 32px;"
+            >
+              Add To Deal
+              <span class="cart-icon">
+                <span
+                  style="padding-bottom: 2px"
+                  class="iconify"
+                  data-icon="uil:shopping-cart-alt"
+                ></span
+              ></span>
+            </button>
+          </div>
+          
+          <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+            <input
+              (click)="decreaseQty(product._id)"
+              type="button"
+              value="-"
+              class="minus minus-btn"
+              style="padding: 0px 3px 3px 0px; font-size: 20px"
+            />
+            <input
+              style="width: 72%;"
+              type="number"
+              name="quantity"
+              [value]="product.qty"
+              class="input-text qty text"
+            />
+            <input
+              [disabled]="product.qty === product.quantity"
+              [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+              (click)="increaseQty(product._id)"
+              type="button"
+              value="+"
+              class="plus plus-btn"
+              style="padding: 0px"
+            />
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</carousel>
+
+
+<carousel
+*ngIf="products5.length!=0"
+[autoplay]="true"
+[autoplayInterval]="5000"
+[loop]="true"
+[cellsToShow]="5"
+[arrowsOutside]="true"
+style="height: 400px; z-index: 99"
+>
+
+<div *ngFor="let product of products5; index as i" class="carousel-cell">
+  <div class="product-item">
+    <a class="product-img">
+      <img class="photo" [routerLink]="['/main-page/single-product', product._id]" [src]="product.pphoto" alt="" />
+      <div class="product-absolute-options">
+        <span class="offer-badge-1">{{
+          ((product.aprice - product.dprice) / product.aprice) * 100
+            | number: "2.0-0"
+        }}% off</span>
+
+        <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+          <span 
+            class="iconify icon_wishlist"
+            data-icon="bi:heart-fill"
+            style="vertical-align: text-bottom"
+          ></span>
+        </span>
+
+        <ng-template #goto>
+          <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+            <span
+            class="iconify icon_wishlist"
+            data-icon="bi:heart"
+            style="vertical-align: text-bottom"
+          ></span>
+          </span>
+        </ng-template>
+
+      </div>
+    </a>
+    <div class="product-text-dt">
+      <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+      <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+      <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+      <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+      <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+      <h4>{{ product.pname }}</h4>
+      <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span> <span> / {{ product.unit }}</span> </div>
+      <div class="qty-cart">
+        <div class="button" style="width: 100%;">
+          <button
+          [disabled]="product.quantity === 0"
+          *ngIf="product.qty === 0"
+          class="addcartbtn"
+          (click)="addProduct(product._id)"
+            mat-raised-button
+            color="secondary"
+            style="width: 100%; cursor: pointer; height: 32px;"
+          >
+            Add To Deal
+            <span class="cart-icon">
+              <span
+                style="padding-bottom: 2px"
+                class="iconify"
+                data-icon="uil:shopping-cart-alt"
+              ></span
+            ></span>
+          </button>
+        </div>
+        
+        <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+          <input
+            (click)="decreaseQty(product._id)"
+            type="button"
+            value="-"
+            class="minus minus-btn"
+            style="padding: 0px 3px 3px 0px; font-size: 20px"
+          />
+          <input
+            style="width: 72%;"
+            type="number"
+            name="quantity"
+            [value]="product.qty"
+            class="input-text qty text"
+          />
+          <input
+            [disabled]="product.qty === product.quantity"
+            [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+            (click)="increaseQty(product._id)"
+            type="button"
+            value="+"
+            class="plus plus-btn"
+            style="padding: 0px"
+          />
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</carousel>
+
+    </div>
+    <div class="section145">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="main-title-tt">
+              <div class="main-title-left">
+                <span>Category</span>
+                <h2>Shop by Categories</h2>
+              </div>
+            </div>
+          </div>
+          
+          <carousel
+          [autoplay]="true"
+          [autoplayInterval]="5000"
+          [loop]="true"
+          [cellsToShow]="5"
+          [arrowsOutside]="true"
+          style="height: 250px; z-index: 99"
+        >
+        
+          <div *ngFor="let product of categories; index as i" class="carousel-cell">
+            <div class="product-item">
+              <a class="product-img">
+                <img class="photo" [routerLink]="['/main-page/featured-products', product.name]" [src]="product.image" alt="" />
+                <div class="product-absolute-options">
+                  <!-- <span class="offer-badge-1">{{
+                    ((product.aprice - product.dprice) / product.aprice) * 100
+                      | number: "2.0-0"
+                  }}% off</span> -->
+  
+                  <!-- <span (click)="removeFromWishlist(product._id)" class="like-icon" *ngIf="wishlist.includes(product._id) === true; else goto" title="wishlist" >
+                    <span 
+                      class="iconify icon_wishlist"
+                      data-icon="bi:heart-fill"
+                      style="vertical-align: text-bottom"
+                    ></span>
+                  </span>
+   -->
+                  <!-- <ng-template #goto>
+                    <span (click)="addToWishlist(product._id)" class="like-icon" title="wishlist">
+                      <span
+                      class="iconify icon_wishlist"
+                      data-icon="bi:heart"
+                      style="vertical-align: text-bottom"
+                    ></span>
+                    </span>
+                  </ng-template> -->
+  
+                </div>
+              </a>
+              <h4>{{ product.name }}</h4>
+              <!-- <div class="product-text-dt">
+                <p *ngIf="product.quantity > 3">Available (In Stock)</p>
+                <p style="color: red;" *ngIf="product.quantity === 3">Only 3 Units Left!</p>
+                <p style="color: red;" *ngIf="product.quantity === 2">Only 2 Units Left!)</p>
+                <p style="color: red;" *ngIf="product.quantity === 1">Only 1 Unit Left!</p>
+                <p style="color: red;" *ngIf="product.quantity === 0">Out of Stock</p>
+               
+                <div class="product-price">{{ product.dprice | currency:'INR' }} <span>{{ product.aprice | currency:'INR' }}</span></div>
+                <div class="qty-cart">
+                  <div class="button" style="width: 100%;">
+                    <button
+                    [disabled]="product.quantity === 0"
+                    *ngIf="product.qty === 0"
+                    class="addcartbtn"
+                    (click)="addProduct(product._id)"
+                      mat-raised-button
+                      color="secondary"
+                      style="width: 100%; cursor: pointer; height: 32px;"
+                    >
+                      Add To Cart
+                      <span class="cart-icon">
+                        <span
+                          style="padding-bottom: 2px"
+                          class="iconify"
+                          data-icon="uil:shopping-cart-alt"
+                        ></span
+                      ></span>
+                    </button>
+                  </div>
+                  
+                  <div *ngIf="product.qty !== 0" style="width: 100%;" class="quantity buttons_added">
+                    <input
+                      (click)="decreaseQty(product._id)"
+                      type="button"
+                      value="-"
+                      class="minus minus-btn"
+                      style="padding: 0px 3px 3px 0px; font-size: 20px"
+                    />
+                    <input
+                      style="width: 72%;"
+                      type="number"
+                      name="quantity"
+                      [value]="product.qty"
+                      class="input-text qty text"
+                    />
+                    <input
+                      [disabled]="product.qty === product.quantity"
+                      [ngStyle]="{backgroundColor: product.qty === product.quantity ? 'gray' : ''}"
+                      (click)="increaseQty(product._id)"
+                      type="button"
+                      value="+"
+                      class="plus plus-btn"
+                      style="padding: 0px"
+                    />
+                  </div>
+                  
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </carousel>
+<!-- 
+          <div class="col-lg-4 col-md-6">
+            <a routerLink="/main-page/new-products" class="best-offer-item">
+              <img src="assets/images/best-offers/offer-1.jpg" alt="" />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a routerLink="/main-page/new-products" class="best-offer-item">
+              <img src="assets/images/best-offers/offer-2.jpg" alt="" />
+            </a>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <a routerLink="/main-page/new-products" class="best-offer-item offr-none">
+              <img src="assets/images/best-offers/offer-3.jpg" alt="" />
+              <div class="cmtk_dt">
+                <div
+                  class="product_countdown-timer offer-counter-text"
+                  data-countdown="2022/03/16"
+                ></div>
+              </div>
+            </a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <!-- <div class="section145" style="padding-top: 50px">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="main-title-tt">
+              <div class="main-title-left">
+                <span>For You</span>
+                <h2>Added New Products</h2>
+              </div>
+              <a
+                class="see-more-btn"
+                [routerLink]="['/main-page', 'new-products']"
+                >See All</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  </div>
+</section>

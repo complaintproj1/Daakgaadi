@@ -1,0 +1,61 @@
+.job-des-dt142 h4 {
+    color: #2b2f4c;
+    font-size: 16px;
+    text-align: left;
+    margin-bottom: 12px;
+    margin-top: 21px !important;
+  }
+  
+  .job-des-dt142 p {
+    color: #3e3f5e;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin-bottom: 0;
+    line-height: 26px;
+  }
+  .policy-des-dt {
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  
+  .policy-des-dt:last-child {
+    margin-bottom: 7px;
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+  .job-main-dt {
+    padding-bottom: 25px;
+    border-bottom: 1px solid #efefef;
+  }
+  
+  .job-main-dt h2 {
+    color: #2b2f4c;
+    font-size: 24px;
+    text-align: left;
+    margin-top: 18px !important;
+    margin-bottom: 12px;
+  }
+  
+  .job-main-dt span {
+    font-size: 16px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 24px;
+    color: #3e3f5e;
+  }
+  
+  .joby-list-dt {
+    list-style: disc;
+  }
+  
+  .joby-list-dt li {
+    margin-left: 30px;
+    margin-bottom: 4px;
+  }
+  
+  .joby-list-dt li:last-child {
+    margin-bottom: 0;
+  }
+  

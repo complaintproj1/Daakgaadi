@@ -1,0 +1,402 @@
+.product-dt-view {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 #e9e9e9;
+}
+
+.all-product-grid {
+  margin-top: 40px;
+}
+
+.product-dt-right {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.product-dt-right h2 {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
+  color: #2b2f4c;
+  margin-bottom: 16px;
+}
+
+.no-stock {
+  display: block;
+}
+
+.no-stock p {
+  display: inline-block;
+  margin-right: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #2b2f4c;
+}
+
+.no-stock p:last-child {
+  margin-right: 0;
+}
+
+.no-stock p span {
+  margin-left: 5px;
+  color: #8f91ac;
+}
+
+/* --- Single Product Radio Btn --- */
+
+.product-radio {
+  margin-top: 7px;
+}
+
+.product-now {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.product-now li {
+  margin-right: 5px;
+  width: 50px;
+  height: 36px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+}
+
+.product-now label,
+.product-now input {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.product-now input[type="radio"] {
+  display: none;
+}
+
+.product-now input[type="radio"]:checked + label,
+.Checked + label {
+  background: #00b207;
+}
+
+.product-now label {
+  padding: 9px;
+  cursor: pointer;
+  background: #c7c7c7;
+  color: #fff;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.product-now label:hover {
+  background: #00b207;
+}
+
+.pp-descp {
+  line-height: 26px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  color: #3e3f5e;
+  font-weight: 400;
+  font-size: 14px;
+  text-align: left;
+}
+
+.product-group-dt {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.product-group-dt ul li {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.product-group-dt ul li:last-child {
+  margin-right: 0;
+}
+
+.main-price {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  color: #2b2f4c;
+}
+
+.main-price span {
+  margin-left: 10px;
+  color: #8f91ac;
+}
+
+.color-discount {
+  color: #7c72ff;
+}
+
+.mrp-price {
+  text-decoration: line-through;
+  font-weight: 500;
+}
+
+.color-discount:after {
+  content: "-";
+  margin-left: 20px;
+  color: #2b2f4c;
+}
+
+.gty-wish-share {
+  margin-top: 22px;
+}
+
+.gty-wish-share li {
+  margin-right: 10px !important;
+}
+
+.ordr-crt-share {
+  margin-top: 22px;
+}
+
+.ordr-crt-share li {
+  margin-right: 10px !important;
+}
+
+span.save-icon {
+  color: #00b207;
+  margin-left: 10px;
+  font-size: 18px;
+  position: relative !important;
+  cursor: pointer;
+  background-color: rgba(246, 151, 51, 0.2);
+  height: 35px;
+  width: 35px;
+  border-radius: 30px;
+  transition: all 0.4s;
+}
+
+.icon-bar {
+  position: fixed;
+  top: 50%;
+  z-index: 2;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.icon-bar a {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 20px;
+}
+
+.icon-bar a:hover {
+  background: #00b207;
+  color: #fff !important;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  -ms-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  background-image: -webkit-linear-gradient(
+    left,
+    rgba(230, 92, 91, 0.9),
+    rgba(245, 93, 44, 0.9)
+  );
+  background-image: linear-gradient(
+    to right,
+    rgba(230, 92, 91, 0.9),
+    rgba(245, 93, 44, 0.9)
+  );
+}
+
+.facebook {
+  background: #3b5998;
+  color: #fff;
+  border-radius: 0 5px 0 0;
+}
+
+.twitter {
+  background: #55acee;
+  color: #fff;
+}
+
+.google {
+  background: #dd4b39;
+  color: #fff;
+}
+
+.linkedin {
+  background: #007bb5;
+  color: #fff;
+}
+
+.whatsapp {
+  background: #25d366;
+  color: #fff;
+  border-radius: 0 0 5px 0;
+}
+
+.content {
+  margin-left: 75px;
+  font-size: 30px;
+}
+
+.add-cart-btn {
+  background: #00b207;
+  border: 0;
+  color: #fff;
+  height: 40px;
+  padding: 0 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.order-btn {
+  background-color: transparent;
+  border: 1px solid #00b207;
+  color: #00b207;
+  height: 40px;
+  padding: 0 20px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.pdp-details {
+  background: #f9f9f9;
+  margin-top: 20px;
+  border-radius: 5px;
+  float: left;
+  width: 100%;
+}
+
+.pdp-details ul li {
+  padding: 20px;
+  border-right: 1px solid #efefef;
+  width: 50%;
+  display: inline-block;
+  float: left;
+}
+
+.pdp-details ul li:last-child {
+  border-right: 0;
+}
+
+.pdp-group-dt {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.pdp-icon .iconify {
+  font-size: 30px;
+  color: #00b207;
+}
+
+.pdp-text-dt {
+  margin-left: 10px;
+}
+
+.pdp-text-dt span {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2b2f4c;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.pdp-text-dt p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3e3f5e;
+  margin-bottom: 0;
+  line-height: 26px;
+}
+
+.pay__logo {
+  display: inline-block;
+  margin: 0 1px 5px 0;
+}
+
+.pay__logo img {
+  width: 20px;
+}
+
+.pdpt-bg {
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.pdpt-bg {
+  margin-top: 30px;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 2px 0 #e9e9e9;
+}
+
+.pdpt-title h4 {
+  border-bottom: 1px solid #efefef;
+  padding: 15px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2b2f4c;
+}
+
+.border_radius:last-child {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.pdpt-body {
+  height: 451px;
+  overflow-y: auto;
+}
+
+.pdct-dts-1 {
+  padding: 0 30px 30px;
+}
+
+.pdct-dt-step h4 {
+  margin-top: 27px !important;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.pdct-dt-step p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3e3f5e;
+  line-height: 26px;
+  text-align: left;
+}
+
+.product_attr {
+  font-size: 14px;
+  font-weight: 400;
+  color: #3e3f5e;
+  line-height: 26px;
+  text-align: left;
+}
+
+.small-items:hover{
+  background-color: gray !important;
+}
+.add-cart-btn:hover{
+  background-color: gray;
+  color: white;
+}
+.add-cart-btn{
+  color: black;
+}

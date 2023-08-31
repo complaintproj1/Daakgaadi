@@ -1,0 +1,110 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="main-title-tab">
+      <h4>
+        <span
+          class="iconify"
+          data-icon="uil:apps"
+          style="margin-right: 10px; margin-bottom: 4px"
+        ></span
+        >Overview
+      </h4>
+    </div>
+    <div class="welcome-text">
+      <h2>Hi! {{ currUser.name }}</h2>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="pdpt-bg">
+      <div class="pdpt-title">
+        <h4>My Rewards</h4>
+      </div>
+      <div class="ddsh-body">
+        <h2>{{ cashbacks.length }} Rewards</h2>
+        <ul>
+          <li>
+            <a class="small-reward-dt hover-btn">Won {{20 | currency:'INR'}}</a>
+          </li>
+          <li>
+            <a class="small-reward-dt hover-btn">Won 40% Off</a>
+          </li>
+          <li>
+            <a class="small-reward-dt hover-btn">Cashback {{ cashbacks[0] | currency:'INR' }}</a>
+          </li>
+          <li>
+            <a class="rewards-link5">+More</a>
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="more-link14"
+        >Rewards and Details
+        <span class="iconify" data-icon="uil:angle-double-right"></span
+      ></a>
+    </div>
+  </div>
+  <div class="col-lg-6 col-md-12">
+    <div class="pdpt-bg">
+      <div class="pdpt-title">
+        <h4>My Orders</h4>
+      </div>
+      <div class="ddsh-body">
+        <h2>{{ allOrders.length }} Recently Purchases</h2>
+        <!-- <ul class="order-list-145">
+          <li>
+            <div class="smll-history">
+              <div class="order-title">
+                2 Items
+                <span
+                  data-inverted=""
+                  data-tooltip="2kg broccoli, 1kg Apple"
+                  data-position="top center"
+                  >?</span
+                >
+              </div>
+              <div class="order-status">On the way</div>
+              <p>$22</p>
+            </div>
+          </li>
+        </ul> -->
+      </div>
+      <a routerLink="/user-dashboard/my-orders" class="more-link14"
+        >All Orders
+        <span class="iconify" data-icon="uil:angle-double-right"></span
+      ></a>
+    </div>
+  </div>
+  <div class="col-lg-12 col-md-12">
+    <div class="pdpt-bg">
+      <div class="pdpt-title">
+        <h4>My Wallet</h4>
+      </div>
+      <div class="wllt-body">
+        <h2>Credits $100</h2>
+        <ul class="wallet-list">
+          <li>
+            <a href="#" class="wallet-links14">
+              <span class="iconify" data-icon="uil:card-atm"></span>Payment
+              Methods</a
+            >
+          </li>
+          <li>
+            <a href="#" class="wallet-links14">
+              <span class="iconify" data-icon="uil:gift"></span>3 offers
+              Active</a
+            >
+          </li>
+          <li>
+            <a href="#" class="wallet-links14">
+              <span class="iconify" data-icon="uil:coins"></span>Points
+              Earning</a
+            >
+          </li>
+        </ul>
+      </div>
+      <a href="#" class="more-link14"
+        >Rewards and Details
+        <span class="iconify" data-icon="uil:angle-double-right"></span
+      ></a>
+    </div>
+  </div>
+</div>

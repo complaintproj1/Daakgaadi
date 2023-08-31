@@ -1,0 +1,25 @@
+<mat-dialog-content>
+  Buy Now & Unlock Prices and Start Shopping..
+  <div >
+    <p style="padding: 10px">
+      Select Package : 
+      <select
+      id="ddlViewBy"  
+      class="form-control"
+      #rk
+      (change)="rSubmit(rk.value)"
+      style="width: 150px; height:  28px; font-size: 11px;"
+    >
+    <option *ngFor="let status_item of cpin ; index as i" value="{{i}}">
+      {{status_item.name}} Rs {{status_item.pointsToPrice}}
+      </option>
+    </select>     
+    
+   </p>
+  </div>
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button mat-dialog-close>Cancel</button>
+    <button mat-button cdkFocusInitial (click)="updateStatus()">Buy</button>
+  </mat-dialog-actions>
+  

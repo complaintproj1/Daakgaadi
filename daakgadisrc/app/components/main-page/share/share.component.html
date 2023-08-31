@@ -1,0 +1,28 @@
+<section>
+    <div class="row d-flex align-items-center ">
+        <div class="col-1 p-0 d-flex justify-content-end">
+            <mat-icon>share</mat-icon>
+        </div>
+        <div class="col-3 d-flex justify-content-start">
+            <h5>Share Via</h5>
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 25px;">
+        <div class="col-4 d-flex align-items-center justify-content-center">
+            <button (click)="showCopyToClipboard()" cdkCopyToClipboard="{{ data?.url }}" class="d-flex align-items-center justify-content-center" style="background-color: white;" mat-fab>
+                <mat-icon>assignment</mat-icon>
+            </button>
+        </div>
+        <div class="col-4 d-flex align-items-center justify-content-center">
+            <button (click)="openFB()" class="d-flex align-items-center justify-content-center" style="background-color: #4267B2" mat-fab>
+                <img height="34px" width="34px" src="assets/images/social/facebook.png" alt="">
+            </button>
+        </div>
+        <div class="col-4 d-flex align-items-center justify-content-center">
+            <button (click)="openWhatsapp()" class="d-flex align-items-center justify-content-center" style="background-color: 	#128C7E" mat-fab>
+                <img height="34px" width="34px" src="assets/images/social/whatsapp.png" alt="">
+            </button>
+        </div>
+    </div>
+</section>

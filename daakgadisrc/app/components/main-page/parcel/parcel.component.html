@@ -1,0 +1,80 @@
+
+  
+
+ <div class="flex flex-wrap items-center" id="bookingSection" >
+    <div class="w-full md:w-5/12 px-4 mr-auto ml-auto" style="margin-top: 100px;margin-bottom: 100px;">
+      <h3 style="font-size: 40px; text-align: left;">Calculate Rate</h3> 
+      <div class="cont">
+        <div class="curvy-box">
+            <label for="pickup">Pickup Location:</label>
+            <select id="pickup" required>
+               <option value="delhi" selected>Delhi</option>
+               <option value="agra">Agra</option>
+               <option value="haryana">Haryana</option>
+               <!-- Add more city options as needed -->
+             </select><br>
+             <label for="drop">Drop Location</label>
+  <select id="drop" required>
+    <option value="delhi" selected>Delhi</option>
+    <option value="agra">Agra</option>
+    <option value="haryana">Haryana </option>
+    <!-- Add more city options as needed -->
+  </select><br>
+          <label class="lbl" for="email">Email:</label>
+          <input class="inp" type="email" id="email" [(ngModel)]="email" />
+          <label class="lbl" for="contact">Contact:</label>
+          <input class="inp" type="text" id="contact" [(ngModel)]="contact" />
+  
+          <div class="input-row">
+            <label class="lbl" for="length">Length (in):</label>
+            <input class="inp" type="number" id="length" [value]="length" (input)="length" />
+  
+            <label class="lbl" for="breadth">Breadth (in):</label>
+            <input class="inp" type="number" id="breadth" [value]="breadth" (input)="breadth" />
+  
+            <label class="lbl" for="height">Height (in):</label>
+            <input class="inp" type="number" id="height" [value]="height" (input)="height" />
+          </div>
+  
+          <label class="lbl" for="actual">Actual Weight (kg):</label>
+          <input class="inp" type="number" id="actual" [value]="actual" (input)="actual" />
+
+          <label class="lbl" for="boxes">no. of Boxes</label>
+          <input class="inp" type="number" id="boxes" [value]="boxes" (input)="boxes"  />
+  
+          <button (click)="calculateEstimated()" >Calculate Estimate</button>
+          <p style="padding: 12px;" id="estimateResult">kg.{{ estimateResult }}</p>
+          
+          <p style="padding: 12px;" id="priceResult">Estimated Price: Rs{{ price }}</p>
+
+          
+          <button (click)="sendConfirmationEmail()">Confirm Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="table-container" *ngIf="showTable">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Length</th>
+          <th>Breadth</th>
+          <th>Height</th>
+          <th>Actual Weight</th>
+          <th>Estimate Result</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ length}}</td>
+          <td>{{ breadth }}</td>
+          <td>{{ height }}</td>
+          <td>{{ actual }}</td>
+          <td>{{estimateResult}}</td>
+          <td>Rs{{ price }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

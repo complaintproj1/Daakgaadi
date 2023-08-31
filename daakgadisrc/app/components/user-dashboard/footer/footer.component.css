@@ -1,0 +1,227 @@
+.footer {
+  background: #fff;
+}
+
+.footer-first-row {
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.call-email-alt {
+  float: left;
+  width: 100%;
+}
+
+.call-email-alt li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.call-email-alt li:last-child {
+  margin-right: 0;
+}
+
+.callemail {
+  font-size: 14px;
+  font-weight: 500;
+  color: #3e3f5e;
+}
+
+.callemail i {
+  margin-right: 5px;
+  color: #00b207;
+}
+
+.social-links-footer {
+  text-align: right;
+  float: left;
+  width: 100%;
+}
+
+.social-links-footer h4 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.social-links-footer ul {
+  float: left;
+  margin-top: 5px;
+  width: 100%;
+}
+
+.social-links-footer ul li {
+  display: inline-block;
+  padding-right: 15px;
+}
+
+.social-links-footer ul li:last-child {
+  padding-right: 0;
+}
+
+.social-links-footer ul li a {
+  color: #2b2f4c;
+  font-size: 14px;
+  text-align: right;
+  position: relative;
+  display: inline-block;
+  bottom: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.social-links-footer ul li:hover a {
+  bottom: 5px;
+  color: #00b207 !important;
+}
+
+.footer-second-row {
+  padding-bottom: 50px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.second-row-item {
+  margin-top: 47px;
+}
+
+.second-row-item h4 {
+  color: #2b2f4c;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.second-row-item ul li {
+  display: block;
+  padding-bottom: 9px;
+}
+
+.second-row-item ul li:last-child {
+  padding-bottom: 0;
+}
+
+.second-row-item ul li a {
+  color: #3e3f5e;
+  font-size: 14px;
+  font-weight: 400;
+  text-align: left;
+  position: relative;
+  left: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.second-row-item ul li a:hover {
+  color: #00b207 !important;
+  left: 5px;
+}
+
+.second-row-item-2 {
+  margin-top: 86px;
+}
+
+.second-row-item-app {
+  margin-top: 47px;
+}
+
+.second-row-item-app h4 {
+  color: #2b2f4c;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+  margin-bottom: 17px;
+}
+
+.second-row-item-app ul li {
+  display: inline-block;
+  padding-right: 0;
+}
+
+.second-row-item-app ul li:last-child {
+  padding-right: 0;
+}
+
+img.download-btn {
+  width: 120px;
+}
+
+.footer-last-row {
+  padding: 30px 0;
+  background: #fff;
+  text-align: center;
+}
+
+.footer-bottom-links ul li {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.footer-bottom-links li a {
+  color: #3e3f5e;
+  font-size: 13px;
+  font-weight: 500;
+  text-align: left;
+  line-height: 24px;
+  position: relative;
+  bottom: 0;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+}
+
+.footer-bottom-links ul li:hover a {
+  bottom: 2px;
+  color: #00b207 !important;
+}
+/* 
+  .copyright-text {
+    color: #3e3f5e;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 20px 0 0;
+    letter-spacing: 0.3px;
+  } */
+
+.financial-institutes {
+  display: inline-block;
+  list-style: none;
+  line-height: 0;
+}
+
+.financial-institutes__logo {
+  display: inline-block;
+  margin: 0 1px 5px 0;
+}
+
+.financial-institutes__logo img {
+  width: 35px;
+  height: auto;
+}
+
+.second-row-item-payment {
+  margin-top: 37px;
+}
+
+.second-row-item-payment h4 {
+  color: #2b2f4c;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: left;
+  margin-bottom: 17px;
+}
+ul>li{
+  cursor: pointer !important;
+}
+
+.contact-us ul li:hover a {
+  bottom: 5px;
+  color: #00b207 !important;
+}
